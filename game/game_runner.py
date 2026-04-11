@@ -27,7 +27,6 @@ class GameRunner:
         if self.eval_logger:
             self.eval_logger.set_initial_board(self.game.board)
 
-    #TODO zamienic DICT na cos innego zeby ide podpowiadalo klucze
     def _draw_board(self, observation: Union[SpymasterObservation,GuesserObservation], is_spymaster: bool):
         if not self.render:
             return
@@ -59,16 +58,31 @@ class GameRunner:
         logger.info("=" * 60)
 
     def run(self):
+        MAX_ERRORS = 3
+        consecutive_errors = 0
         while self.game.phase != Phase.GAME_OVER:
+            if consecutive_errors >= MAX_ERRORS:
+                logger.error(f"[!] Bot disqualified after {MAX_ERRORS} invalid attempts in a row.")
+                print(f"{self.C_RED}Game terminated due to repeated AI errors.{self.C_RESET}")
+                self.game.is_victory = False
+                self.game.phase = Phase.GAME_OVER
+                break
             if self.game.phase == Phase.GIVING_CLUE:
                 obs = self.game.get_observation_for_spymaster()
                 if self.render:
                     self._draw_board(obs, True)
                 clue, count = self.spymaster.get_clue(obs)
-                self.game.give_clue(clue, count)
-                logger.info(f"Spymaster gave clue: ({clue} ,{count})")
-                if self.eval_logger:
-                    self.eval_logger.log_clue(clue, count)
+                success, message = self.game.give_clue(clue, count)
+                if success:
+                    consecutive_errors = 0
+                    logger.info(f"Spymaster gave clue: ({clue} ,{count})")
+                    if self.eval_logger:
+                        self.eval_logger.log_clue(clue, count)
+                else:
+                    consecutive_errors += 1
+                    logger.warning(f"Error: {message}")
+                    if self.render:
+                        logger.info(f"{self.C_RED}Invalid clue: {message} Please try again.{self.C_RESET}")
             elif self.game.phase == Phase.GUESSING:
                 obs = self.game.get_observation_for_guesser()
                 if self.render:
@@ -82,8 +96,13 @@ class GameRunner:
                 else:
                     success, message = self.game.guess(guess)
                     if not success:
-                        logger.error(f"Error: {message}")
+                        consecutive_errors += 1
+                        logger.warning(f"[!] INVALID GUESS ATTEMPT: '{guess}' - {message}")
+                        if self.render:
+                            logger.info(f"{self.C_RED}Invalid guess: {message} Please try again.{self.C_RESET}")
+
                     else:
+                        consecutive_errors = 0
                         logger.info(f"Guess: {guess} - {message}")
                         card_type = next((c.card_type.value for c in self.game.board if c.word == guess), "UNKNOWN")
                         if self.eval_logger:

@@ -29,5 +29,5 @@ class DatasetManager:
             boards.append((item["board_id"],board))
         return boards
 
-    #TODO ZEBY WSZEDZZIE POKAZYWALO TYPY ZWRACANE I WGL
+
 

@@ -17,6 +17,7 @@ from utils.game_logger import GameLogger
 logging.basicConfig(level=logging.INFO, format='%(message)s', stream=sys.stdout)
 #logging.getLogger().setLevel(logging.WARNING) #odkomentowac gdy chcemy wyciszyc konsole
 #TODO sprawdzanie czy clue jest prawidłowe i mozna je korzystac
+#TODO moze UI fajniejsze zeby w konsoli nie bylo i nie trzeba bylo resetowac programu + moze csv viewer
 def select_agents():
     print("\n--- Select Spymaster ---")
     print("1: Human")
@@ -155,8 +156,8 @@ if __name__ == "__main__":
             f_idx = int(input("Select file number: ")) - 1
             replay_file = os.path.join(replays_dir, files[f_idx])
         else:
-            game_num = input("Enter game number (1-100): ").strip()
-            replay_file = os.path.join(replays_dir, f"replay_game_{game_num}.pkl.gz")
+            game_num = input("Enter game number (0-99): ").strip()
+            replay_file = os.path.join(replays_dir, f"replay_game_{str(int(game_num)+1)}.pkl.gz")
 
         if not os.path.exists(replay_file):
             print("Replay not found.")

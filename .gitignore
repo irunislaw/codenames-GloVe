@@ -1,2 +1,4 @@
 */__pycache__/*
 /stats
+/players/interfaces/__pycache__
+*.pyc

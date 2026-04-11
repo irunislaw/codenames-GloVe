@@ -69,40 +69,54 @@ class Codenames:
             board= visible_board,
             score= self._get_score()
         )
-    def give_clue(self, clue: str, count: int) -> bool:
+    def give_clue(self, clue: str, count: int) -> Tuple[bool, str]:
         if self.phase != Phase.GIVING_CLUE:
-            return False
+            return False, "Not in GIVING_CLUE phase."
+        if not isinstance(clue, str) or not clue.strip():
+            return False, "Clue must be a non-empty string."
+        clue = clue.strip().upper()
+        if len(clue.split()) > 1:
+            return False, "Clue must be a single word (no spaces allowed)."
+        if not clue.isalpha():
+            return False, "Clue must contain only letters (no numbers or special characters)."
+        for card in self.board:
+            if not card.is_revealed and card.word.upper() == clue:
+                return False, f"Clue '{clue}' is illegal: it is currently an unrevealed word on the board."
+        if not isinstance(count, int) or count < 0:
+            return False, "Count must be a non-negative integer."
         self.current_clue = clue
         self.guesses_allowed = count + 1
         self.guesses_made = 0
         self.phase = Phase.GUESSING
         self.turn_taken += 1
-        return True
+        return True, "Clue accepted."
 
     def guess(self, word: str) -> Tuple[bool, str]:
         if self.phase != Phase.GUESSING:
             return False, "Not in guessing phase"
-        card = next((c for c in self.board if c.word == word), None)
+        word = word.strip().upper()
+        card = next((c for c in self.board if c.word.upper() == word), None)
 
-        if not card or card.is_revealed:
-            return False, "Word not found or already revealed"
-
+        if not card:
+            return False, f"Word '{word}' not found on the board."
+        if card.is_revealed:
+            return False, f"Word '{word}' is already revealed."
         card.is_revealed = True
         self.guesses_made += 1
 
         if card.card_type == CardType.ASSASSIN:
             self.is_victory = False
             self.phase = Phase.GAME_OVER
-            return True, "Game over, you lost"
+            return True, "Game over, you lost, Assassin revealed"
         elif card.card_type == CardType.NEUTRAL:
             self._end_turn()
-            return True, "Miss, end of turn"
+            return True, "Miss(neutral), end of turn"
         else:
             if self._check_win_condition():
-                return True, "Game over, you won!"
+                return True, "Hit! Game over, you won!"
             if self.guesses_made >= self.guesses_allowed:
                 self._end_turn()
-                return True, "End of moves"
+                return True, "Hit, End of moves"
             return True, "Hit, keep guessing"
 
     def end_guessing_early(self)-> bool:
@@ -118,7 +132,7 @@ class Codenames:
         self.guesses_made = 0
 
     def _check_win_condition(self)-> bool:
-        if self._get_score ==0:
+        if self._get_score() ==0:
             self.is_victory = True
             self.phase = Phase.GAME_OVER
             return True
