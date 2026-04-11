@@ -2,6 +2,7 @@ import random
 from enum import Enum
 from dataclasses import dataclass
 from typing import List, Optional, Dict, Tuple
+#TODO: Statystyki, Dokumentacja, Zbior testowy
 class CardType(Enum):
     TARGET = "TARGET"
     NEUTRAL = "NEUTRAL"
@@ -18,7 +19,7 @@ class Card:
     card_type: CardType
     is_revealed: bool = False    
 
-class codenames:
+class Codenames:
     
     def __init__(self, words: List[str], target_count: int = 9):
         if len(words) != 25:
