@@ -55,12 +55,44 @@ class MainMenu(ctk.CTk):
                                    font=ctk.CTkFont(size=16, weight="bold"))
         label_other.pack(pady=10)
 
-        btn_gen = ctk.CTkButton(self.frame_other, text="Generate Dataset", state="disabled")
+        btn_gen = ctk.CTkButton(self.frame_other, text="Generate Dataset", command=self.generate_dataset)
         btn_gen.pack(pady=5)
 
         btn_rep = ctk.CTkButton(self.frame_other, text="watch replay", state="disabled")
         btn_rep.pack(pady=(5, 15))
 
+    def generate_dataset(self):
+        words_file_path = "data/words.txt"
+        dataset_path = "data/boards_dataset.json"
+
+        try:
+            with open(words_file_path, 'r', encoding='utf-8') as f:
+                words_pool = [line.strip().upper() for line in f if line.strip()]
+        except FileNotFoundError:
+            messagebox.showerror("Błąd", f"Nie można znaleźć pliku: {words_file_path}")
+            return
+
+        if len(words_pool) < 25:
+            messagebox.showerror("Błąd", "Za mało słów w słowniku (minimum 25).")
+            return
+
+        if os.path.exists(dataset_path):
+            confirm = messagebox.askyesno(
+                "Zbiór danych istnieje",
+                f"Zbiór danych już znajduje się w '{dataset_path}'.\nCzy na pewno chcesz go nadpisać?"
+            )
+            if not confirm:
+                return
+
+        try:
+            os.makedirs(os.path.dirname(dataset_path), exist_ok=True)
+
+            DatasetManager.generate_and_save_dataset(words_pool, 100, dataset_path)
+            messagebox.showinfo("Sukces", "Pomyślnie wygenerowano nowy zbiór 100 plansz!")
+        except Exception as e:
+            messagebox.showerror("Błąd", f"Wystąpił błąd podczas generowania: {str(e)}")
+
+            
     def start_single_game(self):
         sm_type = self.var_sm.get()
         g_type = self.var_g.get()

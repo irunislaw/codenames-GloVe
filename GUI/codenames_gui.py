@@ -57,7 +57,7 @@ class CodenamesGui(ctk.CTk):
         for card in self.game.board:
             btn = ctk.CTkButton(
                 self.board_frame,
-                text=card.word,
+                text=f"{card.word}\n",
                 font=ctk.CTkFont(size=16, weight="bold"),
                 fg_color=self.COLOR_UNKNOWN,
                 text_color="white",
@@ -73,29 +73,30 @@ class CodenamesGui(ctk.CTk):
                 row += 1
 
     def setup_control_panel_ui(self):
-        self.control_frame = ctk.CTkFrame(self)
+        self.control_frame = ctk.CTkFrame(self, width=250)
         self.control_frame.grid(row=0, column=1, padx=(0, 20), pady=20, sticky="nsew")
-
+        self.control_frame.pack_propagate(False)
         self.info_label = ctk.CTkLabel(self.control_frame, text="Spymaster turn",
-                                       font=ctk.CTkFont(size=20, weight="bold"))
+                                       font=ctk.CTkFont(size=18, weight="bold"),
+                                       wraplength=230)
         self.info_label.pack(pady=(20, 10))
 
 
         self.score_label = ctk.CTkLabel(self.control_frame, text="Remaining cards: 9", font=ctk.CTkFont(size=14))
         self.score_label.pack(pady=5)
         self.clue_input_frame = ctk.CTkFrame(self.control_frame, fg_color="transparent")
-        self.clue_input_frame.pack(pady=20)
 
-        self.clue_entry = ctk.CTkEntry(self.clue_input_frame, placeholder_text="Enter clue", width=150)
+        self.clue_entry = ctk.CTkEntry(self.clue_input_frame, placeholder_text="Enter clue", width=160)
         self.clue_entry.pack(pady=5)
 
-        self.count_entry = ctk.CTkEntry(self.clue_input_frame, placeholder_text="Word count", width=150)
+        self.count_entry = ctk.CTkEntry(self.clue_input_frame, placeholder_text="Word count", width=160)
         self.count_entry.pack(pady=5)
 
-        self.submit_btn = ctk.CTkButton(self.clue_input_frame, text="Confirm clue", command=self.submit_clue)
+        self.submit_btn = ctk.CTkButton(self.clue_input_frame, text="Confirm clue", width=160, command=self.submit_clue)
         self.submit_btn.pack(pady=10)
 
-        self.pass_btn = ctk.CTkButton(self.control_frame, text="End turn", fg_color="gray", hover_color="#555555", command=self.pass_turn)
+        self.pass_btn = ctk.CTkButton(self.control_frame, text="End turn", fg_color="gray", hover_color="#555555",
+                                      width=160, command=self.pass_turn)
         self.pass_btn.pack(pady=20)
 
 
@@ -153,16 +154,21 @@ class CodenamesGui(ctk.CTk):
                 single_replay_dir = os.path.join("stats", "single_games", "replays")
                 self.game_logger.save_stats_to_csv(single_csv)
                 self.game_logger.save_binary_replay(single_replay_dir)
-            if self.game.is_victory:
-                messagebox.showinfo("Game Over", f"You Won in {self.game.turn_taken} turns.")
+            self.update_ui()
+            self.update()
+            if self.consecutive_errors >= self.MAX_ERRORS:
+                messagebox.showerror("Disqualified", "Game Over!\n\nBot was disqualified after 3 invalid attempts.")
+            elif self.game.is_victory:
+                messagebox.showinfo("Game Over", f"You Won in {self.game.turn_taken} turns!\n\nStats and replay saved.")
             else:
-                messagebox.showerror("Game Over", "BOOM! You hit assassin card.")
-            self.destroy()
+                messagebox.showerror("Game Over", "BOOM! You hit an assassin card.\n\nStats and replay saved.")
+
+
     def execute_bot_spymaster(self):
         obs = self.game.get_observation_for_spymaster()
         clue, count = self.spymaster.get_clue(obs)
 
-        success, _ = self.game.give_clue(clue, count)
+        success, msg = self.game.give_clue(clue, count)
         if success:
             self.consecutive_errors = 0
             self.logger.info(f"Bot Spymaster gave clue: ({clue}, {count})")
@@ -205,6 +211,7 @@ class CodenamesGui(ctk.CTk):
                     self.game.phase = Phase.GAME_OVER
                     self.check_game_over()
                     return
+                #TODO niech ui zmienia sie po zaakceptowaniu message boxa
         self.bot_action_scheduled = False
         self.check_game_over()
         self.update_ui()
@@ -212,7 +219,14 @@ class CodenamesGui(ctk.CTk):
     def update_ui(self):
         self.score_label.configure(text=f"Remaining targets: {self.game._get_score()}")
         is_spymaster_turn = (self.game.phase == Phase.GIVING_CLUE)
-        if is_spymaster_turn:
+        is_game_over = (self.game.phase == Phase.GAME_OVER)
+        human_is_spymaster = (is_spymaster_turn and self.spymaster is None)
+
+        if is_game_over:
+            self.info_label.configure(text="GAME OVER")
+            self.clue_input_frame.pack_forget()
+            self.pass_btn.pack_forget()
+        elif is_spymaster_turn:
             self.pass_btn.pack_forget()
             if self.spymaster is None:
                 self.info_label.configure(text="SPY MASTER TURN:\nGive a clue.")
@@ -236,7 +250,6 @@ class CodenamesGui(ctk.CTk):
                 if not self.bot_action_scheduled:
                     self.bot_action_scheduled = True
                     self.after(1000, self.execute_bot_guesser)
-
         for card in self.game.board:
             btn = self.buttons[card.word]
 
@@ -248,35 +261,12 @@ class CodenamesGui(ctk.CTk):
             else:
                 card_color = self.COLOR_ASSASSIN
 
-            if card.is_revealed or is_spymaster_turn:
+            if card.is_revealed or human_is_spymaster or is_game_over:
                 btn.configure(fg_color=card_color, text_color="black")
                 if card.is_revealed:
                     btn.configure(state="disabled", text=f"{card.word}\n[X]")
                 else:
-                    btn.configure(state="normal", text=card.word)
+                    state = "disabled" if is_game_over else "normal"
+                    btn.configure(state=state, text=f"{card.word}\n")
             else:
-                btn.configure(fg_color=self.COLOR_UNKNOWN, text_color="white", state="normal", text=card.word)
-
-
-
-
-
-        for card in self.game.board:
-            btn = self.buttons[card.word]
-
-            ctype = card.card_type.value
-            if ctype == "TARGET":
-                card_color = self.COLOR_TARGET
-            elif ctype == "NEUTRAL":
-                card_color = self.COLOR_NEUTRAL
-            else:
-                card_color = self.COLOR_ASSASSIN
-
-            if card.is_revealed or is_spymaster_turn:
-                btn.configure(fg_color=card_color, text_color="black")
-                if card.is_revealed:
-                    btn.configure(state="disabled", text=f"{card.word}\n[X]")
-                else:
-                    btn.configure(state="normal", text=card.word)
-            else:
-                btn.configure(fg_color=self.COLOR_UNKNOWN, text_color="white", state="normal", text=card.word)
+                btn.configure(fg_color=self.COLOR_UNKNOWN, text_color="white", state="normal", text=f"{card.word}\n")
