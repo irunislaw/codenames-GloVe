@@ -4,6 +4,9 @@ from dataclasses import dataclass
 from typing import List, Optional, Dict, Tuple
 import copy
 
+from game.observation import SpymasterObservation, ObservationCard, GuesserObservation
+
+
 class CardType(Enum):
     TARGET = "TARGET"
     NEUTRAL = "NEUTRAL"
@@ -45,26 +48,27 @@ class Codenames:
         random.shuffle(types)
         return [Card(word=w,card_type=t) for w,t in zip(words,types)]
 
-    def get_observation_for_spymaster(self)-> Dict:
-        return {
-            "board": [{"word": c.word, "type": c.card_type.value, "revealed": c.is_revealed} for c in self.board],
-            "score": self._get_score(),
-            "turn_taken": self.turn_taken
-        }
-    def get_observation_for_guesser(self)-> Dict:
+    def get_observation_for_spymaster(self)-> SpymasterObservation:
+        board_obs = [ObservationCard(word=c.word, type=c.card_type.value, revealed=c.is_revealed) for c in self.board]
+        return SpymasterObservation(
+            board=board_obs,
+            score=self._get_score(),
+            turn_taken=self.turn_taken
+        )
+    def get_observation_for_guesser(self)-> GuesserObservation:
         visible_board = []
         for c in self.board:
-            visible_board.append({
-                "word": c.word,
-                "type": c.card_type.value if c.is_revealed else "UNKNOWN",
-                "revealed": c.is_revealed
-            })
-        return {
-            "clue": self.current_clue,
-            "remaining_guesses": self.guesses_allowed - self.guesses_made,
-            "board": visible_board,
-            "score": self._get_score()
-        }
+            visible_board.append(ObservationCard(
+                word= c.word,
+                type= c.card_type.value if c.is_revealed else "UNKNOWN",
+                revealed= c.is_revealed
+            ))
+        return GuesserObservation(
+            clue= self.current_clue,
+            remaining_guesses= self.guesses_allowed - self.guesses_made,
+            board= visible_board,
+            score= self._get_score()
+        )
     def give_clue(self, clue: str, count: int) -> bool:
         if self.phase != Phase.GIVING_CLUE:
             return False

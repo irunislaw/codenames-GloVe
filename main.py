@@ -3,6 +3,7 @@ import logging
 import os
 import pickle
 import random
+import sys
 
 from game.codenames import Codenames
 from game.game_runner import GameRunner
@@ -13,9 +14,9 @@ from players.human_spymaster import HumanSpyMaster
 from utils.dataset_manager import DatasetManager
 from utils.game_logger import GameLogger
 
-logging.basicConfig(level=logging.INFO, format='%(message)s')
+logging.basicConfig(level=logging.INFO, format='%(message)s', stream=sys.stdout)
 #logging.getLogger().setLevel(logging.WARNING) #odkomentowac gdy chcemy wyciszyc konsole
-
+#TODO sprawdzanie czy clue jest prawidłowe i mozna je korzystac
 def select_agents():
     print("\n--- Select Spymaster ---")
     print("1: Human")
@@ -44,7 +45,8 @@ if __name__ == "__main__":
     if len(words_pool) < 25:
         print("Error: Not enough words in the word list.")
         exit()
-
+#TODO nie dziala human
+#TODO UI/zeby nie przycinalo kolumn
     DATASET_PATH = "data/boards_dataset.json"
     STATS_BASE_DIR = "stats"
 
@@ -78,7 +80,7 @@ if __name__ == "__main__":
             game = Codenames(pregenerated_board=board)
         else:
             board_id = "random_generation"
-            game = Codenames(words=words_pool)
+            game = Codenames(words=random.sample(words_pool, 25))
 
         eval_logger = GameLogger(spymaster.__class__.__name__, guesser.__class__.__name__, board_id=board_id)
         runner = GameRunner(spymaster, guesser, game, render=True, game_logger=eval_logger)

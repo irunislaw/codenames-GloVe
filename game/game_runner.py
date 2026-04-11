@@ -1,7 +1,8 @@
 import logging
-from typing import List, Optional
+from typing import List, Optional,Union
 
 from game.codenames import Codenames, Phase
+from game.observation import SpymasterObservation, GuesserObservation
 from players.interfaces.guesser import Guesser
 from players.interfaces.spymaster import SpyMaster
 from utils.game_logger import GameLogger
@@ -27,20 +28,20 @@ class GameRunner:
             self.eval_logger.set_initial_board(self.game.board)
 
     #TODO zamienic DICT na cos innego zeby ide podpowiadalo klucze
-    def _draw_board(self, observation: dict, is_spymaster: bool):
+    def _draw_board(self, observation: Union[SpymasterObservation,GuesserObservation], is_spymaster: bool):
         if not self.render:
             return
         logger.info("\n" + "="*60)
         logger.info(" PLANSZA ".center(60, "="))
         logger.info("=" * 60)
-        board = observation["board"]
+        board = observation.board
         for i in range(0, 25, 5):
             row = board[i:i + 5]
             row_str = ""
             for card in row:
-                word = card["word"].center(11)
-                ctype = card["type"]
-                revealed = card["revealed"]
+                word = card.word.center(11)
+                ctype = card.type
+                revealed = card.revealed
                 color = self.C_WHITE
                 bg = self.C_BG_REVEALED if revealed else ""
                 if ctype == "TARGET": color = self.C_GREEN
@@ -50,8 +51,8 @@ class GameRunner:
 
                 marker = "[X]" if revealed else "   "
                 if revealed and not is_spymaster:
-                    if card["type"] == "TARGET": color = self.C_GREEN
-                    elif card["type"] == "ASSASSIN": color = self.C_RED
+                    if card.type == "TARGET": color = self.C_GREEN
+                    elif card.type == "ASSASSIN": color = self.C_RED
                     else: color = self.C_GRAY
                 row_str += f"{color}{bg}{marker}{word}{self.C_RESET} | "
             logger.info(row_str)
