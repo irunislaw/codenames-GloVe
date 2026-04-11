@@ -16,7 +16,7 @@ from utils.game_logger import GameLogger
 
 logging.basicConfig(level=logging.INFO, format='%(message)s', stream=sys.stdout)
 #logging.getLogger().setLevel(logging.WARNING) #odkomentowac gdy chcemy wyciszyc konsole
-#TODO sprawdzanie czy clue jest prawidłowe i mozna je korzystac
+
 #TODO moze UI fajniejsze zeby w konsoli nie bylo i nie trzeba bylo resetowac programu + moze csv viewer
 def select_agents():
     print("\n--- Select Spymaster ---")
@@ -46,8 +46,8 @@ if __name__ == "__main__":
     if len(words_pool) < 25:
         print("Error: Not enough words in the word list.")
         exit()
-#TODO nie dziala human
-#TODO UI/zeby nie przycinalo kolumn
+
+
     DATASET_PATH = "data/boards_dataset.json"
     STATS_BASE_DIR = "stats"
 
@@ -105,8 +105,16 @@ if __name__ == "__main__":
             exit()
 
         run_dir = os.path.join(STATS_BASE_DIR, run_name)
+        os.makedirs(run_dir, exist_ok=True)
         csv_path = os.path.join(run_dir, "batch_evaluation.csv")
         replays_dir = os.path.join(run_dir, "replays")
+        os.makedirs(replays_dir, exist_ok=True)
+        log_file_path = os.path.join(run_dir, "errors_and_warnings.log")
+        file_handler = logging.FileHandler(log_file_path, encoding="utf-8", mode="w")
+        file_handler.setLevel(logging.WARNING)
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        file_handler.setFormatter(formatter)
+        logging.getLogger().addHandler(file_handler)
 
         boards = DatasetManager.load_dataset(DATASET_PATH)
         print(f"Starting evaluation on {len(boards)} boards. This might take a while...")

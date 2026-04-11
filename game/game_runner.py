@@ -60,9 +60,10 @@ class GameRunner:
     def run(self):
         MAX_ERRORS = 3
         consecutive_errors = 0
+        b_id = f"[Board ID: {self.eval_logger.board_id}]" if self.eval_logger else "[Single Game]"
         while self.game.phase != Phase.GAME_OVER:
             if consecutive_errors >= MAX_ERRORS:
-                logger.error(f"[!] Bot disqualified after {MAX_ERRORS} invalid attempts in a row.")
+                logger.error(f"{b_id} [!] Bot disqualified after {MAX_ERRORS} invalid attempts in a row.")
                 print(f"{self.C_RED}Game terminated due to repeated AI errors.{self.C_RESET}")
                 self.game.is_victory = False
                 self.game.phase = Phase.GAME_OVER
@@ -80,7 +81,7 @@ class GameRunner:
                         self.eval_logger.log_clue(clue, count)
                 else:
                     consecutive_errors += 1
-                    logger.warning(f"Error: {message}")
+                    logger.warning(f"{b_id} Error: {message}")
                     if self.render:
                         logger.info(f"{self.C_RED}Invalid clue: {message} Please try again.{self.C_RESET}")
             elif self.game.phase == Phase.GUESSING:
@@ -97,7 +98,7 @@ class GameRunner:
                     success, message = self.game.guess(guess)
                     if not success:
                         consecutive_errors += 1
-                        logger.warning(f"[!] INVALID GUESS ATTEMPT: '{guess}' - {message}")
+                        logger.warning(f"{b_id} [!] INVALID GUESS ATTEMPT: '{guess}' - {message}")
                         if self.render:
                             logger.info(f"{self.C_RED}Invalid guess: {message} Please try again.{self.C_RESET}")
 
