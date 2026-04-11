@@ -2,11 +2,12 @@ import random
 from enum import Enum
 from dataclasses import dataclass
 from typing import List, Optional, Dict, Tuple
-#TODO: Statystyki, Dokumentacja, Zbior testowy
+import copy
+
 class CardType(Enum):
     TARGET = "TARGET"
     NEUTRAL = "NEUTRAL"
-    ASSASIN = "ASSASSIN"
+    ASSASSIN = "ASSASSIN"
 
 class Phase(Enum):
     GIVING_CLUE = "GIVING_CLUE"
@@ -21,9 +22,13 @@ class Card:
 
 class Codenames:
     
-    def __init__(self, words: List[str], target_count: int = 9):
-        if len(words) != 25:
-            raise ValueError("Board has to contain exactly 25 words")
+    def __init__(self, words: Optional[List[str]] = None, pregenerated_board: Optional[List[Card]] = None , target_count: int = 9):
+        if pregenerated_board:
+            self.board = copy.deepcopy(pregenerated_board)
+        elif words and len(words) == 25:
+            self.board = self._generate_board(words,target_count)
+        else:
+            raise ValueError("Board has to contain exactly 25 words or pregenerated_board must be provided")
         self.phase: Phase = Phase.GIVING_CLUE
         self.is_victory: Optional[bool] = None
         self.turn_taken: int = 0
@@ -31,14 +36,12 @@ class Codenames:
         self.guesses_allowed: int = 0
         self.guesses_made: int = 0
 
-        self.board = self._generate_board(words,target_count)
-
     def _generate_board(self, words: List[str], target_count: int) -> List[Card]:
         neutral_count = 25 - target_count - 1
 
         types = [CardType.TARGET] * target_count + \
                 [CardType.NEUTRAL] * neutral_count + \
-                [CardType.ASSASIN] * 1
+                [CardType.ASSASSIN] * 1
         random.shuffle(types)
         return [Card(word=w,card_type=t) for w,t in zip(words,types)]
 
@@ -83,7 +86,7 @@ class Codenames:
         card.is_revealed = True
         self.guesses_made += 1
 
-        if card.card_type == CardType.ASSASIN:
+        if card.card_type == CardType.ASSASSIN:
             self.is_victory = False
             self.phase = Phase.GAME_OVER
             return True, "Game over, you lost"

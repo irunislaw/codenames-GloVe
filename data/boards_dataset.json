@@ -1,0 +1,10502 @@
+[
+  {
+    "board_id": 0,
+    "board": [
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 1,
+    "board": [
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 2,
+    "board": [
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 3,
+    "board": [
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 4,
+    "board": [
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 5,
+    "board": [
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 6,
+    "board": [
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 7,
+    "board": [
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 8,
+    "board": [
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 9,
+    "board": [
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 10,
+    "board": [
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 11,
+    "board": [
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 12,
+    "board": [
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 13,
+    "board": [
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 14,
+    "board": [
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 15,
+    "board": [
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 16,
+    "board": [
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 17,
+    "board": [
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 18,
+    "board": [
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 19,
+    "board": [
+      {
+        "word": "CASTLE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 20,
+    "board": [
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 21,
+    "board": [
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 22,
+    "board": [
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 23,
+    "board": [
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 24,
+    "board": [
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 25,
+    "board": [
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 26,
+    "board": [
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 27,
+    "board": [
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 28,
+    "board": [
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 29,
+    "board": [
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 30,
+    "board": [
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 31,
+    "board": [
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 32,
+    "board": [
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 33,
+    "board": [
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 34,
+    "board": [
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 35,
+    "board": [
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 36,
+    "board": [
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 37,
+    "board": [
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 38,
+    "board": [
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 39,
+    "board": [
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 40,
+    "board": [
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 41,
+    "board": [
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "ASSASSIN"
+      }
+    ]
+  },
+  {
+    "board_id": 42,
+    "board": [
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 43,
+    "board": [
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 44,
+    "board": [
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 45,
+    "board": [
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 46,
+    "board": [
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 47,
+    "board": [
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 48,
+    "board": [
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 49,
+    "board": [
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 50,
+    "board": [
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 51,
+    "board": [
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 52,
+    "board": [
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 53,
+    "board": [
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 54,
+    "board": [
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 55,
+    "board": [
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 56,
+    "board": [
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "ASSASSIN"
+      }
+    ]
+  },
+  {
+    "board_id": 57,
+    "board": [
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "ASSASSIN"
+      }
+    ]
+  },
+  {
+    "board_id": 58,
+    "board": [
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 59,
+    "board": [
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 60,
+    "board": [
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 61,
+    "board": [
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 62,
+    "board": [
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 63,
+    "board": [
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 64,
+    "board": [
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 65,
+    "board": [
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 66,
+    "board": [
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 67,
+    "board": [
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 68,
+    "board": [
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 69,
+    "board": [
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 70,
+    "board": [
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "ASSASSIN"
+      }
+    ]
+  },
+  {
+    "board_id": 71,
+    "board": [
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 72,
+    "board": [
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 73,
+    "board": [
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 74,
+    "board": [
+      {
+        "word": "SUN",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 75,
+    "board": [
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 76,
+    "board": [
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 77,
+    "board": [
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 78,
+    "board": [
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 79,
+    "board": [
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 80,
+    "board": [
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 81,
+    "board": [
+      {
+        "word": "SPACE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 82,
+    "board": [
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 83,
+    "board": [
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 84,
+    "board": [
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "ASSASSIN"
+      }
+    ]
+  },
+  {
+    "board_id": 85,
+    "board": [
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 86,
+    "board": [
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 87,
+    "board": [
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 88,
+    "board": [
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 89,
+    "board": [
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 90,
+    "board": [
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 91,
+    "board": [
+      {
+        "word": "CASTLE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 92,
+    "board": [
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 93,
+    "board": [
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 94,
+    "board": [
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 95,
+    "board": [
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 96,
+    "board": [
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "TARGET"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "CAT",
+        "type": "TARGET"
+      }
+    ]
+  },
+  {
+    "board_id": 97,
+    "board": [
+      {
+        "word": "WATER",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "DOG",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WIND",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "TARGET"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "COW",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 98,
+    "board": [
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "SHIELD",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "SUN",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "RIVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "PAPER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "EARTH",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "TREE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "NEUTRAL"
+      }
+    ]
+  },
+  {
+    "board_id": 99,
+    "board": [
+      {
+        "word": "TREE",
+        "type": "ASSASSIN"
+      },
+      {
+        "word": "MOUNTAIN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "BRIDGE",
+        "type": "TARGET"
+      },
+      {
+        "word": "PAPER",
+        "type": "TARGET"
+      },
+      {
+        "word": "WIND",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "MOON",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SHIELD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "HOUSE",
+        "type": "TARGET"
+      },
+      {
+        "word": "SWORD",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAT",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CAR",
+        "type": "TARGET"
+      },
+      {
+        "word": "EYE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SPACE",
+        "type": "TARGET"
+      },
+      {
+        "word": "COW",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "CASTLE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "GOLD",
+        "type": "TARGET"
+      },
+      {
+        "word": "DOG",
+        "type": "TARGET"
+      },
+      {
+        "word": "HELMET",
+        "type": "TARGET"
+      },
+      {
+        "word": "FIRE",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SILVER",
+        "type": "TARGET"
+      },
+      {
+        "word": "EARTH",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "WATER",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "SUN",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "KEY",
+        "type": "NEUTRAL"
+      },
+      {
+        "word": "RIVER",
+        "type": "NEUTRAL"
+      }
+    ]
+  }
+]

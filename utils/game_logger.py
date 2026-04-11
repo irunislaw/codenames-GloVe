@@ -1,0 +1,77 @@
+import csv
+import gzip
+import os
+import pickle
+from datetime import datetime
+
+from game.codenames import Codenames
+from players.interfaces import guesser
+
+
+class GameLogger:
+    def __init__(self, spymaster_name: str, guesser_name: str, board_id: str = "random"):
+        self.game_id = datetime.now().strftime("%Y%m%d-%H%M%S_%f")
+        self.board_id = board_id
+
+        self.stats = {
+            "game_id": self.game_id,
+            "board_id": self.board_id,
+            "spymaster": spymaster_name,
+            "guesser": guesser_name,
+            "is_victory": False,
+            "turns_taken": 0,
+            "total_guesses_made": 0,
+            "neutral_hits": 0,
+            "assassin_hit": False,
+            "targets_left": 9,
+            "clues_history": []
+        }
+        self.binary_history = []
+        self.initial_board = []
+    def set_initial_board(self, board):
+        self.initial_board = [(c.word, c.card_type.value) for c in board]
+
+    def log_clue(self, clue: str, count: int):
+        self.stats["clues_history"].append(clue)
+        self.binary_history.append({"action": "CLUE", "clue": clue, "count": count})
+
+    def log_guess(self, word: str, result_type: str):
+        self.stats["total_guesses_made"] += 1
+        self.binary_history.append({"action": "GUESS", "word": word, "result": result_type})
+
+        if result_type == "NEUTRAL":
+            self.stats["neutral_hits"] += 1
+        elif result_type == "ASSASSIN":
+            self.stats["assassin_hit"] = True
+
+    def finalize_game(self, game: Codenames):
+        self.stats["is_victory"] = game.is_victory
+        self.stats["turns_taken"] = game.turn_taken
+        self.stats["targets_left"] = game._get_score()
+
+    def save_stats_to_csv(self, filepath: str):
+        os.makedirs(os.path.dirname(filepath),exist_ok=True)
+        file_exists = os.path.isfile(filepath)
+
+        row_to_save = self.stats.copy()
+        row_to_save["clues_history"] = "|".join(row_to_save["clues_history"])
+
+        with open(filepath, "a", newline='',encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=row_to_save.keys())
+            if not file_exists:
+                writer.writeheader()
+            writer.writerow(row_to_save)
+
+    def save_binary_replay(self, folderpath: str, custom_filename: str = None):
+        os.makedirs(folderpath,exist_ok=True)
+        filename_str = custom_filename if custom_filename else f"replay_{self.game_id}.pkl.gz"
+        filename = os.path.join(folderpath, filename_str)
+
+        data = {
+            "game_id": self.game_id,
+            "board_id": self.board_id,
+            "initial_board": self.initial_board,
+            "history": self.binary_history
+        }
+        with gzip.open(filename, "wb") as f:
+            pickle.dump(data, f)
