@@ -1,4 +1,6 @@
+import logging
 import os
+import threading
 from tkinter import messagebox
 
 import customtkinter as ctk
@@ -6,6 +8,7 @@ import random
 
 from GUI.codenames_gui import CodenamesGui
 from game.codenames import Codenames
+from game.game_runner import GameRunner
 from players.glove_guesser import GloveGuesser
 from players.glove_spymaster import GloveSpyMaster
 from utils.dataset_manager import DatasetManager
@@ -17,7 +20,7 @@ class MainMenu(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.title("Codenames - Main Menu")
-        self.geometry("600x450")
+        self.geometry("1200x900")
         self.grid_columnconfigure(0, weight=1)
         title_label = ctk.CTkLabel(self, text="=== CODENAMES ===", font=ctk.CTkFont(size=24, weight="bold"))
         title_label.grid(row=0, column=0, pady=(20, 10))
@@ -58,9 +61,161 @@ class MainMenu(ctk.CTk):
         btn_gen = ctk.CTkButton(self.frame_other, text="Generate Dataset", command=self.generate_dataset)
         btn_gen.pack(pady=5)
 
-        btn_rep = ctk.CTkButton(self.frame_other, text="watch replay", state="disabled")
+        self.btn_batch = ctk.CTkButton(self.frame_other, text="Batch Evaluation", command=self.run_batch_evaluation)
+        self.btn_batch.pack(pady=5)
+
+        btn_view_batch = ctk.CTkButton(self.frame_other, text="View Evaluation Results", command=self.open_batch_results_dialog)
+        btn_view_batch.pack(pady=5)
+
+        btn_rep = ctk.CTkButton(self.frame_other, text="Watch replay", command=self.watch_replay)
         btn_rep.pack(pady=(5, 15))
 
+    def watch_replay(self):
+        import gzip
+        import pickle
+        from tkinter import filedialog
+
+
+        filepath = filedialog.askopenfilename(
+            initialdir=os.path.abspath("stats"),
+            title="Select Replay File",
+            filetypes=(("Gzip Pickle", "*.pkl.gz"), ("All Files", "*.*"))
+        )
+
+        if not filepath:
+            return
+
+        try:
+
+            with gzip.open(filepath, "rb") as f:
+                data = pickle.load(f)
+
+            from GUI.replay_gui import ReplayGui
+            self.destroy()
+            app = ReplayGui(data)
+            app.mainloop()
+
+        except Exception as e:
+            messagebox.showerror("Replay Error", f"Couldnt load replay:\n{str(e)}")
+    def run_batch_evaluation(self):
+        dataset_path = "data/boards_dataset.json"
+        if not os.path.exists(dataset_path):
+            messagebox.showerror("Error", f"coulnt find dataset at {dataset_path}. Generate it first.")
+            return
+
+        dialog = ctk.CTkInputDialog(text="Enter test name (np. test_glove_v1):", title="Batch Evaluation")
+        run_name = dialog.get_input()
+
+        if not run_name or not run_name.strip():
+            return
+
+        run_name = run_name.strip()
+
+        self.btn_batch.configure(state="disabled", text="Evaluating... Please wait")
+
+
+        thread = threading.Thread(target=self._evaluation_thread, args=(run_name, dataset_path), daemon=True)
+        thread.start()
+
+    def _evaluation_thread(self, run_name, dataset_path):
+        stats_base_dir = "stats"
+        run_dir = os.path.join(stats_base_dir, run_name)
+        os.makedirs(run_dir, exist_ok=True)
+
+        csv_path = os.path.join(run_dir, "batch_evaluation.csv")
+        replays_dir = os.path.join(run_dir, "replays")
+        os.makedirs(replays_dir, exist_ok=True)
+
+        log_file_path = os.path.join(run_dir, "errors_and_warnings.log")
+        file_handler = logging.FileHandler(log_file_path, encoding="utf-8", mode="w")
+        file_handler.setLevel(logging.WARNING)
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        file_handler.setFormatter(formatter)
+        logging.getLogger().addHandler(file_handler)
+
+        try:
+            boards = DatasetManager.load_dataset(dataset_path)
+            logging.getLogger().setLevel(logging.WARNING)
+
+            for board_id, board in boards:
+                game = Codenames(pregenerated_board=board)
+                spymaster = GloveSpyMaster()
+                guesser = GloveGuesser()
+
+                eval_logger = GameLogger(spymaster.__class__.__name__, guesser.__class__.__name__, board_id=str(board_id))
+                runner = GameRunner(spymaster, guesser, game, render=False, game_logger=eval_logger)
+                runner.run()
+
+                eval_logger.save_stats_to_csv(csv_path)
+
+                game_number = int(board_id) + 1
+                eval_logger.save_binary_replay(replays_dir, custom_filename=f"replay_game_{game_number}.pkl.gz")
+
+            status_message = f"Evaluation successed!\nData saved in:\n{run_dir}/"
+            status_title = "Succssess"
+
+        except Exception as e:
+            status_message = f"Error during evaluation: {e}"
+            status_title = "Error"
+        finally:
+            logging.getLogger().setLevel(logging.INFO)
+
+
+            def update_ui():
+                self.btn_batch.configure(state="normal", text="Batch Evaluation")
+                if status_title == "Succssess":
+                    messagebox.showinfo(status_title, status_message)
+
+                    from GUI.batch_result_gui import BatchResultsGui
+                    self.destroy()
+                    app = BatchResultsGui(run_name)
+                    app.mainloop()
+                else:
+                    messagebox.showerror(status_title, status_message)
+
+            self.after(0, update_ui)
+
+    def open_batch_results_dialog(self):
+        stats_dir = "stats"
+        if not os.path.exists(stats_dir):
+            messagebox.showinfo("Info", "No stats folder found.")
+            return
+
+        runs = [d for d in os.listdir(stats_dir) if os.path.isdir(os.path.join(stats_dir, d)) and d != "single_games"]
+
+        if not runs:
+            messagebox.showinfo("Info", "No batch evaluation runs found.")
+            return
+
+        dialog = ctk.CTkToplevel(self)
+        dialog.title("Select Evaluation")
+        dialog.geometry("400x200")
+        dialog.transient(self)
+        dialog.grab_set()
+
+        lbl = ctk.CTkLabel(dialog, text="Select or type test name:", font=ctk.CTkFont(size=14, weight="bold"))
+        lbl.pack(pady=(20, 10))
+
+        combo_var = ctk.StringVar(value=runs[0])
+        combo = ctk.CTkComboBox(dialog, values=runs, variable=combo_var, width=250)
+        combo.pack(pady=10)
+
+        def confirm():
+            selected = combo_var.get().strip()
+            if not selected: return
+
+            if not os.path.exists(os.path.join(stats_dir, selected)):
+                messagebox.showerror("Error", f"Run '{selected}' does not exist.")
+                return
+
+            dialog.destroy()
+            from GUI.batch_result_gui import BatchResultsGui
+            self.destroy()
+            app = BatchResultsGui(selected)
+            app.mainloop()
+
+        btn_confirm = ctk.CTkButton(dialog, text="Open", command=confirm)
+        btn_confirm.pack(pady=10)
     def generate_dataset(self):
         words_file_path = "data/words.txt"
         dataset_path = "data/boards_dataset.json"
@@ -69,17 +224,17 @@ class MainMenu(ctk.CTk):
             with open(words_file_path, 'r', encoding='utf-8') as f:
                 words_pool = [line.strip().upper() for line in f if line.strip()]
         except FileNotFoundError:
-            messagebox.showerror("Błąd", f"Nie można znaleźć pliku: {words_file_path}")
+            messagebox.showerror("Error", f"File cant be find: {words_file_path}")
             return
 
         if len(words_pool) < 25:
-            messagebox.showerror("Błąd", "Za mało słów w słowniku (minimum 25).")
+            messagebox.showerror("Error", "not enough words in dict (min 25).")
             return
 
         if os.path.exists(dataset_path):
             confirm = messagebox.askyesno(
-                "Zbiór danych istnieje",
-                f"Zbiór danych już znajduje się w '{dataset_path}'.\nCzy na pewno chcesz go nadpisać?"
+                "Dataset already exists",
+                f"dataset already exists at '{dataset_path}'.\nAre you sure you want to overwrite it?"
             )
             if not confirm:
                 return
@@ -88,11 +243,11 @@ class MainMenu(ctk.CTk):
             os.makedirs(os.path.dirname(dataset_path), exist_ok=True)
 
             DatasetManager.generate_and_save_dataset(words_pool, 100, dataset_path)
-            messagebox.showinfo("Sukces", "Pomyślnie wygenerowano nowy zbiór 100 plansz!")
+            messagebox.showinfo("Success", "Succesfully generated dataset!")
         except Exception as e:
-            messagebox.showerror("Błąd", f"Wystąpił błąd podczas generowania: {str(e)}")
+            messagebox.showerror("Error", f"Error occured during dataset generation: {str(e)}")
 
-            
+
     def start_single_game(self):
         sm_type = self.var_sm.get()
         g_type = self.var_g.get()

@@ -99,7 +99,20 @@ class CodenamesGui(ctk.CTk):
                                       width=160, command=self.pass_turn)
         self.pass_btn.pack(pady=20)
 
+        self.btn_back = ctk.CTkButton(self.control_frame, text="Return to Menu", fg_color="#c0392b",
+                                      hover_color="#922b21", command=self.return_to_menu)
+        self.btn_back.pack(side="bottom", pady=20)
 
+    def return_to_menu(self):
+        if self.game.phase != Phase.GAME_OVER:
+            confirm = messagebox.askyesno("Exit to Menu", "Are you sure you want to leave? Current game progress will be lost.")
+            if not confirm:
+                return
+
+        from GUI.main_menu import MainMenu
+        self.destroy()
+        app = MainMenu()
+        app.mainloop()
 
 
     def submit_clue(self):
