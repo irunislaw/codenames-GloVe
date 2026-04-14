@@ -9,12 +9,13 @@ import numpy as np
 
 from game.codenames import Codenames
 import random
+import itertools
 
 
 class GloveSpyMaster(SpyMaster):
     # ONLY 1 TEAM GAMES
 
-    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.0):
+    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.5):
         super().__init__()
         # każdy agent wczytuje model oddzielnie
         # możliwe, że to jest nieoptymalne
@@ -45,36 +46,34 @@ class GloveSpyMaster(SpyMaster):
         return score
 
     def get_clue(self, obs:SpymasterObservation) -> Tuple[str, int]:
-        #TODO Implement glove
-        targets = [c.word.lower() for c in obs.board if not c.revealed and c.type == 'TARGET']
-        targets_vecs = np.array([self.glove[word] for word in targets if word in self.glove])
-        
-        assassin = [c.word for c in obs.board if not c.revealed and c.type == 'ASSASSIN']
+        #TODO Żeby przeszukiwał też inne ilości słów do zgadnięcia niż 2
+        #TODO Żeby działało gdy zostaną mniej niż 2 słowa do zgadnięcia na planszy
+        targets = [c.word.lower() for c in obs.board if not c.revealed and c.type == 'TARGET' and c.word.lower() in self.glove]
+        assassin = [c.word for c in obs.board if not c.revealed and c.type == 'ASSASSIN' and c.word.lower() in self.glove]
         assassin_word = assassin[0].lower() if assassin else None
-        assassin_vec = None
-        if assassin_word and assassin_word in self.glove:   
-            assassin_vec = self.glove[assassin_word]
-
+        
         word_count = 2 # HARDCODED
+
+        # get all combinations of the target words
+        target_combinations = itertools.combinations(targets, word_count)
 
         best_clue = None
         best_score = -float('inf')
 
-        board_words = {c.word.upper() for c in obs.board}
-
-        for potential_clue in self.words_pool:
-            if potential_clue.upper() in board_words:
+        for selected_targets in target_combinations:
+            selected_targets_list = list(selected_targets)
+            assassin_list = [(assassin_word, -self.weight_assasin)]
+            current_clue, current_score = self.glove.most_similar(
+                positive=selected_targets_list, 
+                negative=assassin_list,
+                topn=1,
+            )[0]
+            board_words = {c.word.upper() for c in obs.board}
+            if current_clue.upper() in board_words:
                 continue
-            potential_clue_low = potential_clue.lower()
-            if potential_clue_low not in self.glove:
-                continue
-
-            potential_clue_vec = self.glove[potential_clue_low]
-
-            current_score = self.calculate_score(potential_clue_vec, targets_vecs, assassin_vec)
 
             if current_score > best_score:
-                best_clue = potential_clue
+                best_clue = current_clue
                 best_score = current_score
 
         #print("Glove bot turn(spymaster)")
@@ -107,8 +106,6 @@ if __name__=="__main__":
     game = Codenames(words=random.sample(words_pool, 25))
     obs = game.get_observation_for_spymaster()
 
-    print(obs)
     agent = GloveSpyMaster()
 
     agent.get_clue(obs)
-

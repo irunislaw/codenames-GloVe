@@ -4,3 +4,4 @@
 *.pyc
 players/interfaces/__pycache__/guesser.cpython-313.pyc
 players/interfaces/__pycache__/spymaster.cpython-313.pyc
+.vscode/launch.json
