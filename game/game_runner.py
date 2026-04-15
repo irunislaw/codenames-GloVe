@@ -26,6 +26,8 @@ class GameRunner:
 
         if self.eval_logger:
             self.eval_logger.set_initial_board(self.game.board)
+            if hasattr(self.spymaster, "logger"):
+                self.spymaster.logger = self.eval_logger
 
     def _draw_board(self, observation: Union[SpymasterObservation,GuesserObservation], is_spymaster: bool):
         if not self.render:
@@ -63,10 +65,12 @@ class GameRunner:
         b_id = f"[Board ID: {self.eval_logger.board_id}]" if self.eval_logger else "[Single Game]"
         while self.game.phase != Phase.GAME_OVER:
             if consecutive_errors >= MAX_ERRORS:
-                logger.error(f"{b_id} [!] Bot disqualified after {MAX_ERRORS} invalid attempts in a row.")
-                print(f"{self.C_RED}Game terminated due to repeated AI errors.{self.C_RESET}")
+                reason = f"Bot disqualified after {MAX_ERRORS} invalid attempts in a row."
+                logger.error(f"{b_id} [!] {reason}")
                 self.game.is_victory = False
                 self.game.phase = Phase.GAME_OVER
+                if self.eval_logger:
+                    self.eval_logger.set_disqualified(reason)
                 break
             if self.game.phase == Phase.GIVING_CLUE:
                 obs = self.game.get_observation_for_spymaster()
@@ -82,6 +86,8 @@ class GameRunner:
                 else:
                     consecutive_errors += 1
                     logger.warning(f"{b_id} Error: {message}")
+                    if self.eval_logger:
+                        self.eval_logger.log_invalid_action("CLUE", f"clue: '{clue}', count: {count}", message)
                     if self.render:
                         logger.info(f"{self.C_RED}Invalid clue: {message} Please try again.{self.C_RESET}")
             elif self.game.phase == Phase.GUESSING:
@@ -99,6 +105,9 @@ class GameRunner:
                     if not success:
                         consecutive_errors += 1
                         logger.warning(f"{b_id} [!] INVALID GUESS ATTEMPT: '{guess}' - {message}")
+                        if self.eval_logger:
+                            self.eval_logger.log_invalid_action("GUESS", guess, message)
+
                         if self.render:
                             logger.info(f"{self.C_RED}Invalid guess: {message} Please try again.{self.C_RESET}")
 
