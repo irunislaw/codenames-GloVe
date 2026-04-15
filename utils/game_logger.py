@@ -5,14 +5,14 @@ import pickle
 from datetime import datetime
 
 from game.codenames import Codenames
-from players.interfaces import guesser
+
 
 
 class GameLogger:
     def __init__(self, spymaster_name: str, guesser_name: str, board_id: str = "random"):
         self.game_id = datetime.now().strftime("%Y%m%d-%H%M%S_%f")
         self.board_id = board_id
-
+        self._pending_words = None
         self.stats = {
             "game_id": self.game_id,
             "board_id": self.board_id,
@@ -24,16 +24,43 @@ class GameLogger:
             "neutral_hits": 0,
             "assassin_hit": False,
             "targets_left": 9,
-            "clues_history": []
+            "clues_history": [],
+            "spymasters_words": [],
+            "disqualified": False,
+            "disqualification_reason": ""
         }
         self.binary_history = []
         self.initial_board = []
+
+    def log_invalid_action(self, action_type: str, attempt: str, reason: str):
+        self.binary_history.append({
+            "action": f"INVALID_{action_type}",
+            "attempt": attempt,
+            "reason": reason
+        })
+
+    def set_disqualified(self, reason: str):
+        self.stats["disqualified"] = True
+        self.stats["disqualification_reason"] = reason
+        self.binary_history.append({"action": "DISQUALIFIED", "reason": reason})
+
     def set_initial_board(self, board):
         self.initial_board = [(c.word, c.card_type.value) for c in board]
 
     def log_clue(self, clue: str, count: int):
         self.stats["clues_history"].append(clue)
-        self.binary_history.append({"action": "CLUE", "clue": clue, "count": count})
+        event = {"action": "CLUE", "clue": clue, "count": count}
+
+
+        if hasattr(self, '_pending_words') and self._pending_words is not None:
+            event["words"] = self._pending_words
+            self._pending_words = None
+
+        self.binary_history.append(event)
+
+    def log_spymaster_words(self, words: list):
+        #self.stats["spymasters_words"].append(words)
+        self._pending_words = words
 
     def log_guess(self, word: str, result_type: str):
         self.stats["total_guesses_made"] += 1
@@ -43,6 +70,7 @@ class GameLogger:
             self.stats["neutral_hits"] += 1
         elif result_type == "ASSASSIN":
             self.stats["assassin_hit"] = True
+
 
     def finalize_game(self, game: Codenames):
         self.stats["is_victory"] = game.is_victory
