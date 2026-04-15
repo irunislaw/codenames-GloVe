@@ -4,7 +4,7 @@ import os
 import pickle
 import random
 import sys
-
+from tqdm import tqdm
 from game.codenames import Codenames
 from game.game_runner import GameRunner
 from players.glove_guesser import GloveGuesser
@@ -122,7 +122,7 @@ if __name__ == "__main__":
 
         logging.getLogger().setLevel(logging.WARNING)
 
-        for board_id, board in boards:
+        for board_id, board in tqdm(boards, desc="Evaluating boards", unit="board"):
             game = Codenames(pregenerated_board=board)
             spymaster = GloveSpyMaster()
             guesser = GloveGuesser()

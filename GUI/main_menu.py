@@ -70,6 +70,16 @@ class MainMenu(ctk.CTk):
         btn_rep = ctk.CTkButton(self.frame_other, text="Watch replay", command=self.watch_replay)
         btn_rep.pack(pady=(5, 15))
 
+    def _update_progress(self, current, total):
+        try:
+            if hasattr(self, 'progress_bar') and self.progress_bar.winfo_exists():
+                self.progress_bar.set(current / total)
+            if hasattr(self, 'progress_label') and self.progress_label.winfo_exists():
+                percent = int((current / total) * 100)
+                self.progress_label.configure(text=f"Progress: {current} / {total} ({percent}%)")
+        except Exception:
+            pass
+
     def watch_replay(self):
         import gzip
         import pickle
@@ -112,7 +122,13 @@ class MainMenu(ctk.CTk):
         run_name = run_name.strip()
 
         self.btn_batch.configure(state="disabled", text="Evaluating... Please wait")
+        if not hasattr(self, 'progress_bar') or not self.progress_bar.winfo_exists():
+            self.progress_bar = ctk.CTkProgressBar(self.frame_other)
+            self.progress_bar.pack(pady=(10, 2))
+            self.progress_bar.set(0)
 
+            self.progress_label = ctk.CTkLabel(self.frame_other, text="Progress: 0 / 0 (0%)")
+            self.progress_label.pack(pady=(0, 5))
 
         thread = threading.Thread(target=self._evaluation_thread, args=(run_name, dataset_path), daemon=True)
         thread.start()
@@ -136,13 +152,15 @@ class MainMenu(ctk.CTk):
         try:
             boards = DatasetManager.load_dataset(dataset_path)
             logging.getLogger().setLevel(logging.WARNING)
+            total_boards = len(boards)
 
-            for board_id, board in boards:
+            for i, (board_id, board) in enumerate(boards):
                 game = Codenames(pregenerated_board=board)
                 spymaster = GloveSpyMaster()
                 guesser = GloveGuesser()
 
-                eval_logger = GameLogger(spymaster.__class__.__name__, guesser.__class__.__name__, board_id=str(board_id))
+                eval_logger = GameLogger(spymaster.__class__.__name__, guesser.__class__.__name__,
+                                         board_id=str(board_id))
                 runner = GameRunner(spymaster, guesser, game, render=False, game_logger=eval_logger)
                 runner.run()
 
@@ -150,6 +168,9 @@ class MainMenu(ctk.CTk):
 
                 game_number = int(board_id) + 1
                 eval_logger.save_binary_replay(replays_dir, custom_filename=f"replay_game_{game_number}.pkl.gz")
+
+
+                self.after(0, lambda c=i + 1, t=total_boards: self._update_progress(c, t))
 
             status_message = f"Evaluation successed!\nData saved in:\n{run_dir}/"
             status_title = "Succssess"
@@ -163,6 +184,10 @@ class MainMenu(ctk.CTk):
 
             def update_ui():
                 self.btn_batch.configure(state="normal", text="Batch Evaluation")
+                if hasattr(self, 'progress_bar') and self.progress_bar.winfo_exists():
+                    self.progress_bar.destroy()
+                if hasattr(self, 'progress_label') and self.progress_label.winfo_exists():
+                    self.progress_label.destroy()
                 if status_title == "Succssess":
                     messagebox.showinfo(status_title, status_message)
 
@@ -249,10 +274,11 @@ class MainMenu(ctk.CTk):
 
 
     def start_single_game(self):
+
         sm_type = self.var_sm.get()
         g_type = self.var_g.get()
-        spymaster = GloveSpyMaster() if sm_type == "Glove Bot" else None
-        guesser = GloveGuesser() if g_type == "Glove Bot" else None
+
+
         if self.var_dataset.get():
             dataset_path = "data/boards_dataset.json"
             if not os.path.exists(dataset_path):
@@ -260,6 +286,9 @@ class MainMenu(ctk.CTk):
                 return
             boards = DatasetManager.load_dataset(dataset_path)
             board_id, board = random.choice(boards)
+
+
+
             my_game = Codenames(pregenerated_board=board)
         else:
             try:
@@ -276,9 +305,14 @@ class MainMenu(ctk.CTk):
             board_id = "random_generation"
             my_game = Codenames(words=random.sample(words_pool, 25))
         print(f"[MENU] preparing game: Spymaster={sm_type}, Guesser={g_type}")
-        sm_name = spymaster.__class__.__name__ if spymaster else "HumanSpyMaster"
-        g_name = guesser.__class__.__name__ if guesser else "HumanGuesser"
+        sm_name =  "SpyMaster"
+        g_name = "Guesser"
         eval_logger = GameLogger(sm_name, g_name, board_id=board_id)
+        spymaster = GloveSpyMaster(logger=eval_logger) if sm_type == "Glove Bot" else None
+        guesser = GloveGuesser() if g_type == "Glove Bot" else None
+
+
+
 
 
         self.destroy()

@@ -1,11 +1,22 @@
 import customtkinter as ctk
 
-
 class ReplayFrame(ctk.CTkFrame):
     def __init__(self,master, replay_data, **kwargs):
         super().__init__(master, **kwargs)
         self.replay_data = replay_data
-        self.history = replay_data["history"]
+        self.history = []
+        pending_words = None
+        for action in replay_data["history"]:
+            if action.get("action") == "SPYMASTER_WORDS":
+                pending_words = action.get("words")
+            elif action.get("action") == "CLUE":
+                if pending_words:
+                    action["words"] = pending_words
+                    pending_words = None
+                self.history.append(action)
+            else:
+                self.history.append(action)
+
         self.current_step = 0
 
         self.COLOR_UNKNOWN = "#3b3b3b"
@@ -26,7 +37,6 @@ class ReplayFrame(ctk.CTkFrame):
         self.grid_columnconfigure(0, weight=3)
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(0, weight=1)
-
 
         self.board_frame = ctk.CTkFrame(self)
         self.board_frame.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
@@ -53,11 +63,9 @@ class ReplayFrame(ctk.CTkFrame):
                 col = 0
                 row += 1
 
-
         self.right_panel = ctk.CTkFrame(self, width=350)
         self.right_panel.grid(row=0, column=1, padx=(0, 20), pady=20, sticky="nsew")
         self.right_panel.grid_rowconfigure(1, weight=1)
-
 
         self.controls_frame = ctk.CTkFrame(self.right_panel)
         self.controls_frame.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
@@ -72,16 +80,37 @@ class ReplayFrame(ctk.CTkFrame):
         self.btn_next = ctk.CTkButton(self.controls_frame, text="Next >", command=self.next_step, width=80)
         self.btn_next.pack(side="right", padx=5, pady=10)
 
-
         self.timeline_frame = ctk.CTkScrollableFrame(self.right_panel, label_text="Match Timeline")
         self.timeline_frame.grid(row=1, column=0, sticky="nsew", padx=10, pady=(0, 10))
 
         self.log_labels = []
         for i, action in enumerate(self.history):
             if action["action"] == "CLUE":
-                text = f"🎯 Clue: {action['clue']} ({action['count']})"
+                clue_text = f"🎯 Clue: {action['clue']} ({action['count']})"
                 color = "#5dade2"
-            else:
+                words = action.get("words")
+
+                lbl = ctk.CTkLabel(self.timeline_frame, text=clue_text, text_color=color, anchor="w",
+                                   font=ctk.CTkFont(size=14), justify="left")
+
+                if words:
+                    words_str = ", ".join(words) if isinstance(words, (list, tuple)) else str(words)
+                    clue_text_base = clue_text + " ▼"
+                    lbl.configure(text=clue_text_base, cursor="hand2")
+
+                    def toggle(e, l=lbl, w=words_str, c_base=clue_text_base, c_orig=clue_text):
+                        if "▼" in l.cget("text"):
+                            l.configure(text=c_orig + " ▲\n   ↳ Intention: " + w)
+                        else:
+                            l.configure(text=c_base)
+
+                    lbl.bind("<Button-1>", toggle)
+
+                lbl.pack(fill="x", pady=2, padx=5)
+                self.log_labels.append(lbl)
+
+
+            elif action["action"] == "GUESS":
                 word = action["word"]
                 if word == "PASS":
                     text = "⏭️ Guesser PASSED"
@@ -98,9 +127,33 @@ class ReplayFrame(ctk.CTkFrame):
                     else:
                         color = "white"
 
-            lbl = ctk.CTkLabel(self.timeline_frame, text=text, text_color=color, anchor="w", font=ctk.CTkFont(size=14))
-            lbl.pack(fill="x", pady=2, padx=5)
-            self.log_labels.append(lbl)
+                lbl = ctk.CTkLabel(self.timeline_frame, text=text, text_color=color, anchor="w",
+                                   font=ctk.CTkFont(size=14))
+                lbl.pack(fill="x", pady=2, padx=5)
+                self.log_labels.append(lbl)
+            elif action["action"] in ["INVALID_CLUE", "INVALID_GUESS"]:
+                attempt = action.get("attempt", "Unknown")
+                reason = action.get("reason", "Unknown error")
+                act_type = action["action"].replace("INVALID_", "")
+                text = f"⚠️ Invalid {act_type}: {attempt}\n   ↳ {reason}"
+
+
+                lbl = ctk.CTkLabel(self.timeline_frame, text=text, text_color="#f39c12", anchor="w",
+                                   font=ctk.CTkFont(size=14), justify="left")
+                lbl.pack(fill="x", pady=2, padx=5)
+                self.log_labels.append(lbl)
+
+
+            elif action["action"] == "DISQUALIFIED":
+                reason = action.get("reason", "Limit of invalid actions reached")
+                text = f"❌ DISQUALIFIED:\n   ↳ {reason}"
+
+
+                lbl = ctk.CTkLabel(self.timeline_frame, text=text, text_color="#c0392b", anchor="w",
+                                   font=ctk.CTkFont(size=14, weight="bold"), justify="left")
+                lbl.pack(fill="x", pady=2, padx=5)
+                self.log_labels.append(lbl)
+
 
 
         self.options_frame = ctk.CTkFrame(self.right_panel)
@@ -109,9 +162,6 @@ class ReplayFrame(ctk.CTkFrame):
         self.spymaster_view_var = ctk.BooleanVar(value=True)
         self.spymaster_cb = ctk.CTkCheckBox(self.options_frame, text="Spymaster View (Pokaż kolory)", variable=self.spymaster_view_var, command=self.update_board)
         self.spymaster_cb.pack(pady=10)
-
-
-
 
     def prev_step(self):
         if self.current_step > 0:
@@ -126,41 +176,33 @@ class ReplayFrame(ctk.CTkFrame):
     def update_board(self):
         self.step_label.configure(text=f"Step: {self.current_step} / {len(self.history)}")
 
-
         revealed_words = set()
         for i in range(self.current_step):
             action = self.history[i]
             if action["action"] == "GUESS" and action["word"] != "PASS":
                 revealed_words.add(action["word"])
 
-
         for word, card_type in self.replay_data["initial_board"]:
             btn = self.buttons[word]
             actual_color = self.get_color(card_type)
 
             if word in revealed_words:
-
                 btn.configure(fg_color=actual_color, text=f"{word}\n[X]", text_color="black")
             else:
-
                 if self.spymaster_view_var.get():
-
                     btn.configure(fg_color=actual_color, text=f"{word}\n", text_color="black")
                 else:
-
                     btn.configure(fg_color=self.COLOR_UNKNOWN, text=f"{word}\n", text_color="white")
 
 
         for i, lbl in enumerate(self.log_labels):
-            if i == self.current_step - 1:
+            if self.current_step > 0 and i == self.current_step - 1:
                 lbl.configure(fg_color="#555555", corner_radius=5)
             else:
                 lbl.configure(fg_color="transparent")
 
 
 class ReplayGui(ctk.CTk):
-
-
     def __init__(self, replay_data):
         super().__init__()
         self.title("Codenames - Replay Viewer")
@@ -168,7 +210,6 @@ class ReplayGui(ctk.CTk):
 
         self.replay_frame = ReplayFrame(self, replay_data)
         self.replay_frame.pack(fill="both", expand=True)
-
 
         self.btn_back = ctk.CTkButton(self.replay_frame.options_frame, text="Return to Menu",
                                       fg_color="#c0392b", hover_color="#922b21", command=self.return_to_menu)

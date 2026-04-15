@@ -1,3 +1,5 @@
+import logging
+import sys
 from typing import Dict, Tuple
 
 from game.observation import SpymasterObservation
@@ -11,26 +13,33 @@ from game.codenames import Codenames
 import random
 import itertools
 
+from utils.game_logger import GameLogger
+
 
 class GloveSpyMaster(SpyMaster):
     # ONLY 1 TEAM GAMES
-
-    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.5):
+    shared_model = None
+    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.5, logger: GameLogger = None):
         super().__init__()
-        # każdy agent wczytuje model oddzielnie
-        # możliwe, że to jest nieoptymalne
-        print("loading glove model")
-        glove = api.load(model)
-        print("loading finished")
-        self.glove = glove # glove behaves like a list
+        self.terminal = logging.getLogger()
+        if GloveSpyMaster.shared_model is None:
+            self.terminal.info("loading glove model")
+            GloveSpyMaster.shared_model = api.load(model)
+            self.terminal.info("loading finished")
+
+        self.glove = GloveSpyMaster.shared_model # glove behaves like a list
         self.weight_assasin = weight_assasin
+        self.logger = None
+        if logger:
+            self.logger = logger
+
         # oddzielnie czyta słownik z pliku
         WORDS_FILE_PATH = "data/words.txt"
         try:
             with open(WORDS_FILE_PATH, 'r', encoding='utf-8') as f:
                 words_pool = [line.strip().upper() for line in f if line.strip()]
         except FileNotFoundError:
-            print(f"Error: Couldnt find {WORDS_FILE_PATH}.")
+            self.terminal.error(f"Error: Couldnt find {WORDS_FILE_PATH}.")
             exit()             
         self.words_pool = words_pool
 
@@ -47,11 +56,14 @@ class GloveSpyMaster(SpyMaster):
 
     def get_clue(self, obs:SpymasterObservation) -> Tuple[str, int]:
         #TODO Żeby przeszukiwał też inne ilości słów do zgadnięcia niż 2
+        #tu moze jakos robic wagi według similarity tylko trzeba to wyważyc,
+        # chodzi mi o to ze zaczynamy od kombinacji czwórek np.
+        # i sprawdzamy similarity i jak jest dos wysokie to mozemy dac to clue, a jak nie to mniej wyrazów jeszcze
         #TODO Żeby działało gdy zostaną mniej niż 2 słowa do zgadnięcia na planszy
         targets = [c.word.lower() for c in obs.board if not c.revealed and c.type == 'TARGET' and c.word.lower() in self.glove]
         assassin = [c.word for c in obs.board if not c.revealed and c.type == 'ASSASSIN' and c.word.lower() in self.glove]
         assassin_word = assassin[0].lower() if assassin else None
-        
+
         word_count = 2 # HARDCODED
 
         # get all combinations of the target words
@@ -59,7 +71,7 @@ class GloveSpyMaster(SpyMaster):
 
         best_clue = None
         best_score = -float('inf')
-
+        best_selected_targets = None
         for selected_targets in target_combinations:
             selected_targets_list = list(selected_targets)
             assassin_list = [(assassin_word, -self.weight_assasin)]
@@ -75,12 +87,17 @@ class GloveSpyMaster(SpyMaster):
             if current_score > best_score:
                 best_clue = current_clue
                 best_score = current_score
+                best_selected_targets = selected_targets_list
 
-        #print("Glove bot turn(spymaster)")
-        print("targets", targets)
-        print("assasin", assassin)
-        print("clue", best_clue)
-        print("score", best_score)
+
+        if self.logger:
+            self.logger.log_spymaster_words(best_selected_targets)
+        if self.terminal:
+            self.terminal.info(f"targets {targets}")
+            self.terminal.info(f"assassin {assassin}")
+            self.terminal.info(f"clue {best_clue}")
+            self.terminal.info(f"score {best_score}")
+
         return best_clue,word_count
 
 def quick_test(name="glove-wiki-gigaword-300"):
@@ -96,6 +113,8 @@ def model_info(name="glove-wiki-gigaword-300"):
 
 if __name__=="__main__":
     # test glove embeddings
+    logging.basicConfig(level=logging.NOTSET, format='%(message)s', stream=sys.stdout)
+
     WORDS_FILE_PATH = "data/words.txt"
     try:
         with open(WORDS_FILE_PATH, 'r', encoding='utf-8') as f:

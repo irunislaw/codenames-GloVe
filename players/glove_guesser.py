@@ -7,7 +7,7 @@ from players.interfaces.guesser import Guesser
 
 class GloveGuesser(Guesser):
     #TODO implement
-    def get_guess(self, obs: GuesserObservation) -> str:
+    def get_guess(self, obs: GuesserObservation, logger= None) -> str:
         #print("Glove bot turn(guesser)")
 
         unrevealed = [c.word for c in obs.board if not c.revealed]
