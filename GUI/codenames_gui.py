@@ -224,7 +224,6 @@ class CodenamesGui(ctk.CTk):
                     self.game.phase = Phase.GAME_OVER
                     self.check_game_over()
                     return
-                #TODO niech ui zmienia sie po zaakceptowaniu message boxa
         self.bot_action_scheduled = False
         self.check_game_over()
         self.update_ui()

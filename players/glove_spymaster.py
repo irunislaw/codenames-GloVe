@@ -91,7 +91,15 @@ class GloveSpyMaster(SpyMaster):
 
 
         if self.logger:
-            self.logger.log_spymaster_words(best_selected_targets)
+            similarities = []
+            if best_clue and best_selected_targets:
+                for w in best_selected_targets:
+                    try:
+                        sim = float(self.glove.similarity(best_clue, w))
+                    except Exception:
+                        sim = 0.0
+                    similarities.append(sim)
+            self.logger.log_spymaster_words(best_selected_targets, similarities)
         if self.terminal:
             self.terminal.info(f"targets {targets}")
             self.terminal.info(f"assassin {assassin}")
