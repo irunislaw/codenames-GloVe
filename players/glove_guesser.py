@@ -1,3 +1,4 @@
+import logging
 from typing import Dict
 # import random
 
@@ -9,10 +10,17 @@ import itertools
 
 
 class GloveGuesser(Guesser):
+    shared_model = None
     def __init__(self, model="glove-wiki-gigaword-100"):
         super().__init__()
+        self.terminal = logging.getLogger()
         # TODO Podmienic inicjalizacje modelu na ta bardziej optymalna
-        self.glove = api.load(model)
+        if GloveGuesser.shared_model is None:
+            self.terminal.error("loading guesser glove model")
+            GloveGuesser.shared_model = api.load(model)
+            self.terminal.error("loading guesser finished")
+
+        self.glove = GloveGuesser.shared_model
         self.last_guess = None
         self.current_list = []
 
@@ -38,7 +46,7 @@ class GloveGuesser(Guesser):
                 best_combination = comb
 
         # DEBUG
-        print(best_combination)
+        #print(best_combination)
         # print([self.glove.cosine_similarities(clue_vector, [self.glove[x]])[0] for x in possibilities])
 
         self.current_list = best_combination

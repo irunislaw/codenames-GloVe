@@ -33,10 +33,14 @@ class ReplayFrame(ctk.CTkFrame):
         self.update_board()
 
     def get_color(self, card_type):
-        if card_type == "TARGET": return self.COLOR_TARGET
-        if card_type == "NEUTRAL": return self.COLOR_NEUTRAL
-        if card_type == "ASSASSIN": return self.COLOR_ASSASSIN
+        card_type_str = str(card_type).split('.')[-1].upper()
+
+        if "TARGET" in card_type_str: return self.COLOR_TARGET
+        if "NEUTRAL" in card_type_str: return self.COLOR_NEUTRAL
+        if "ASSASSIN" in card_type_str: return self.COLOR_ASSASSIN
+        print(f"DEBUG REPLAY: Nieznany typ karty dla get_color: '{card_type}'")
         return self.COLOR_UNKNOWN
+
 
     def setup_ui(self):
         self.grid_columnconfigure(0, weight=3)
@@ -125,13 +129,26 @@ class ReplayFrame(ctk.CTkFrame):
                     text = "⏭️ Guesser PASSED"
                     color = "white"
                 else:
-                    res = action["result"]
+                    res = action.get("result", "UNKNOWN")
+
+
+                    if "UNKNOWN" in str(res).upper():
+                        clean_guess = word.upper().strip()
+                        for b_word, b_type in self.replay_data["initial_board"]:
+                            if b_word.upper().strip() == clean_guess:
+                                res = str(b_type).split('.')[-1].upper()
+                                break
+
+
                     text = f"❓ Guess: {word} -> {res}"
-                    if res == "TARGET":
+
+
+                    res_upper = str(res).upper()
+                    if "TARGET" in res_upper:
                         color = self.COLOR_TARGET
-                    elif res == "ASSASSIN":
+                    elif "ASSASSIN" in res_upper:
                         color = self.COLOR_ASSASSIN
-                    elif res == "NEUTRAL":
+                    elif "NEUTRAL" in res_upper:
                         color = self.COLOR_NEUTRAL
                     else:
                         color = "white"
@@ -215,7 +232,7 @@ class ReplayFrame(ctk.CTkFrame):
         for i in range(self.current_step):
             action = self.history[i]
             if action["action"] == "GUESS" and action["word"] != "PASS":
-                revealed_words.add(action["word"])
+                revealed_words.add(action["word"].upper())
 
             last_clue = None
             for i in range(self.current_step):
@@ -235,7 +252,7 @@ class ReplayFrame(ctk.CTkFrame):
                     except Exception:
                         sim_text = "\nN/A"
 
-                if word in revealed_words:
+                if word.upper() in revealed_words:
                     btn.configure(fg_color=actual_color, text=f"{word}\n[X]{sim_text}", text_color="black")
                 else:
                     if self.spymaster_view_var.get():

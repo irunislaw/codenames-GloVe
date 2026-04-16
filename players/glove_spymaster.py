@@ -23,9 +23,9 @@ class GloveSpyMaster(SpyMaster):
         super().__init__()
         self.terminal = logging.getLogger()
         if GloveSpyMaster.shared_model is None:
-            self.terminal.info("loading glove model")
+            self.terminal.error("loading glove model")
             GloveSpyMaster.shared_model = api.load(model)
-            self.terminal.info("loading finished")
+            self.terminal.error("loading finished")
 
         self.glove = GloveSpyMaster.shared_model # glove behaves like a list
         self.weight_assasin = weight_assasin
@@ -63,8 +63,10 @@ class GloveSpyMaster(SpyMaster):
         targets = [c.word.lower() for c in obs.board if not c.revealed and c.type == 'TARGET' and c.word.lower() in self.glove]
         assassin = [c.word for c in obs.board if not c.revealed and c.type == 'ASSASSIN' and c.word.lower() in self.glove]
         assassin_word = assassin[0].lower() if assassin else None
+        word_count = 2  # HARDCODED
+        if len(targets) == 1:
+            word_count = 1
 
-        word_count = 2 # HARDCODED
 
         # get all combinations of the target words
         target_combinations = itertools.combinations(targets, word_count)
@@ -72,22 +74,35 @@ class GloveSpyMaster(SpyMaster):
         best_clue = None
         best_score = -float('inf')
         best_selected_targets = None
+
+        board_words = {c.word.upper() for c in obs.board}
+
         for selected_targets in target_combinations:
             selected_targets_list = list(selected_targets)
             assassin_list = [(assassin_word, -self.weight_assasin)]
-            current_clue, current_score = self.glove.most_similar(
-                positive=selected_targets_list, 
-                negative=assassin_list,
-                topn=1,
-            )[0]
-            board_words = {c.word.upper() for c in obs.board}
-            if current_clue.upper() in board_words:
-                continue
+            try:
 
-            if current_score > best_score:
-                best_clue = current_clue
-                best_score = current_score
-                best_selected_targets = selected_targets_list
+                similar_words = self.glove.most_similar(
+                    positive=selected_targets_list,
+                    negative=assassin_list,
+                    topn=5,
+                )
+            except Exception:
+                continue
+            for current_clue, current_score in similar_words:
+                if current_clue.upper() in board_words:
+                    print(f"Skipping {current_clue} because it's already revealed")
+                    continue
+                if current_clue.upper() not in board_words:
+                    if current_score > best_score:
+                        best_clue = current_clue
+                        best_score = current_score
+                        best_selected_targets = selected_targets_list
+                    break
+        if best_clue is None:
+            return "PASS", 0
+
+
 
 
         if self.logger:
@@ -111,7 +126,7 @@ class GloveSpyMaster(SpyMaster):
 def quick_test(name="glove-wiki-gigaword-300"):
     model = api.load(name)
     # Quick test: Find a clue for 'Apple' and 'Washington'
-    print(model.most_similar(positive=['apple', 'washington'], topn=5))
+    print(model.most_similar(positive=['vet'], topn=5))
 
 def model_info(name="glove-wiki-gigaword-300"):
     print(list(api.info()['models'].keys()))
@@ -121,18 +136,19 @@ def model_info(name="glove-wiki-gigaword-300"):
 
 if __name__=="__main__":
     # test glove embeddings
+    #TODO USUNIECIE ZEBY DAWALO HASLA Z LICZBAMI ALBO - 
     logging.basicConfig(level=logging.NOTSET, format='%(message)s', stream=sys.stdout)
-
-    WORDS_FILE_PATH = "data/words.txt"
-    try:
-        with open(WORDS_FILE_PATH, 'r', encoding='utf-8') as f:
-            words_pool = [line.strip().upper() for line in f if line.strip()]
-    except FileNotFoundError:
-        print(f"Error: Couldnt find {WORDS_FILE_PATH}.")
-        exit()            
-    game = Codenames(words=random.sample(words_pool, 25))
-    obs = game.get_observation_for_spymaster()
-
-    agent = GloveSpyMaster()
-
-    agent.get_clue(obs)
+    quick_test()
+    # WORDS_FILE_PATH = "data/words.txt"
+    # try:
+    #     with open(WORDS_FILE_PATH, 'r', encoding='utf-8') as f:
+    #         words_pool = [line.strip().upper() for line in f if line.strip()]
+    # except FileNotFoundError:
+    #     print(f"Error: Couldnt find {WORDS_FILE_PATH}.")
+    #     exit()
+    # game = Codenames(words=random.sample(words_pool, 25))
+    # obs = game.get_observation_for_spymaster()
+    #
+    # agent = GloveSpyMaster()
+    #
+    # agent.get_clue(obs)
