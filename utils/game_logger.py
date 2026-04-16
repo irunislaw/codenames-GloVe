@@ -13,6 +13,7 @@ class GameLogger:
         self.game_id = datetime.now().strftime("%Y%m%d-%H%M%S_%f")
         self.board_id = board_id
         self._pending_words = None
+        self._pending_similarities = None
         self.stats = {
             "game_id": self.game_id,
             "board_id": self.board_id,
@@ -55,12 +56,15 @@ class GameLogger:
         if hasattr(self, '_pending_words') and self._pending_words is not None:
             event["words"] = self._pending_words
             self._pending_words = None
-
+        if hasattr(self, '_pending_similarities') and self._pending_similarities is not None:
+            event["similarities"] = self._pending_similarities
+            self._pending_similarities = None
         self.binary_history.append(event)
 
-    def log_spymaster_words(self, words: list):
+    def log_spymaster_words(self, words: list, similarities: list = None):
         #self.stats["spymasters_words"].append(words)
         self._pending_words = words
+        self._pending_similarities = similarities
 
     def log_guess(self, word: str, result_type: str):
         self.stats["total_guesses_made"] += 1
