@@ -14,20 +14,17 @@ import random
 import itertools
 
 from utils.game_logger import GameLogger
+from utils.load_model import Model
 
 
 class GloveSpyMaster(SpyMaster):
     # ONLY 1 TEAM GAMES
-    shared_model = None
+
     def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.5, logger: GameLogger = None):
         super().__init__()
         self.terminal = logging.getLogger()
-        if GloveSpyMaster.shared_model is None:
-            self.terminal.error("loading glove model")
-            GloveSpyMaster.shared_model = api.load(model)
-            self.terminal.error("loading finished")
-
-        self.glove = GloveSpyMaster.shared_model # glove behaves like a list
+        model_manager = Model()
+        self.glove = model_manager.load_model(name = model)
         self.weight_assasin = weight_assasin
         self.logger = None
         if logger:

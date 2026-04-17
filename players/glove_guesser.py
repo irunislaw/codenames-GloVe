@@ -8,17 +8,18 @@ from players.interfaces.guesser import Guesser
 import gensim.downloader as api
 import itertools
 
+from utils.load_model import Model
+
 
 class GloveGuesser(Guesser):
-    shared_model = None
     def __init__(self, model="glove-wiki-gigaword-100"):
         super().__init__()
         self.terminal = logging.getLogger()
         # TODO Podmienic inicjalizacje modelu na ta bardziej optymalna
-        if GloveGuesser.shared_model is None:
-            self.terminal.error("loading guesser glove model")
-            GloveGuesser.shared_model = api.load(model)
-            self.terminal.error("loading guesser finished")
+        self.terminal.error("loading guesser glove model")
+        model_manager = Model()
+        GloveGuesser.shared_model = model_manager.load_model(name = model)
+        self.terminal.error("loading guesser finished")
 
         self.glove = GloveGuesser.shared_model
         self.last_guess = None

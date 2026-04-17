@@ -4,6 +4,9 @@ from players.glove_spymaster import GloveSpyMaster
 import threading
 import gensim.downloader as api
 
+from utils.load_model import Model
+
+
 class ReplayFrame(ctk.CTkFrame):
     def __init__(self,master, replay_data, **kwargs):
         super().__init__(master, **kwargs)
@@ -200,7 +203,8 @@ class ReplayFrame(ctk.CTkFrame):
                 if GloveSpyMaster.shared_model:
                     self.glove_model = GloveSpyMaster.shared_model
                 else:
-                    self.glove_model = api.load("glove-wiki-gigaword-100")
+                    model_manager = Model()
+                    self.glove_model = model_manager.load_model("glove-wiki-gigaword-100")
                     GloveSpyMaster.shared_model = self.glove_model
             except Exception as e:
                 print(f"Failed to load model: {e}")
