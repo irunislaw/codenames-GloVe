@@ -136,7 +136,7 @@ def model_info(name="glove-wiki-gigaword-300"):
 
 if __name__=="__main__":
     # test glove embeddings
-    #TODO USUNIECIE ZEBY DAWALO HASLA Z LICZBAMI ALBO - 
+    #TODO USUNIECIE ZEBY DAWALO HASLA Z LICZBAMI ALBO -
     logging.basicConfig(level=logging.NOTSET, format='%(message)s', stream=sys.stdout)
     quick_test()
     # WORDS_FILE_PATH = "data/words.txt"
