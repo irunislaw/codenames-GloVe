@@ -1,4 +1,5 @@
 import logging
+import time
 from typing import List, Optional,Union
 
 from game.codenames import Codenames, Phase
@@ -76,13 +77,21 @@ class GameRunner:
                 obs = self.game.get_observation_for_spymaster()
                 if self.render:
                     self._draw_board(obs, True)
+                start_time = time.time()
                 clue, count = self.spymaster.get_clue(obs)
+                latency = time.time() - start_time
+                is_cheat = any(
+                    clue.upper() in c.word.upper() or c.word.upper() in clue.upper() for c in self.game.board if
+                    not c.is_revealed)
+                if is_cheat and self.eval_logger:
+                    self.eval_logger.log_invalid_action("CHEAT_WARNING", clue,"Clue contains unrevealed words.")
                 success, message = self.game.give_clue(clue, count)
                 if success:
                     consecutive_errors = 0
                     logger.info(f"Spymaster gave clue: ({clue} ,{count})")
                     if self.eval_logger:
-                        self.eval_logger.log_clue(clue, count)
+                        top_k = getattr(self.spymaster, "top_k", None)
+                        self.eval_logger.log_clue(clue, count, latency, self.game.get_score(), top_k)
                 else:
                     consecutive_errors += 1
                     logger.warning(f"{b_id} Error: {message}")
@@ -94,12 +103,14 @@ class GameRunner:
                 obs = self.game.get_observation_for_guesser()
                 if self.render:
                     self._draw_board(obs, False)
+                start_time = time.time()
                 guess = self.guesser.get_guess(obs)
+                latency = time.time() - start_time
                 if guess.upper() == "PASS":
                     self.game.end_guessing_early()
                     logger.info("Passing turn...")
                     if self.eval_logger:
-                        self.eval_logger.log_guess("PASS","PASS")
+                        self.eval_logger.log_guess("PASS","PASS",latency,self.game.get_score())
                 else:
                     success, message = self.game.guess(guess)
                     if not success:
@@ -116,7 +127,7 @@ class GameRunner:
                         logger.info(f"Guess: {guess} - {message}")
                         card_type = next((c.card_type.value for c in self.game.board if c.word.upper() == guess.upper()), "UNKNOWN")
                         if self.eval_logger:
-                            self.eval_logger.log_guess(guess, card_type)
+                            self.eval_logger.log_guess(guess, card_type, latency, self.game.get_score())
         logger.info(f"Game over!")
         if self.game.is_victory:
             logger.info(f"You won in {self.game.turn_taken} turns!")

@@ -229,7 +229,7 @@ class CodenamesGui(ctk.CTk):
         self.update_ui()
 
     def update_ui(self):
-        self.score_label.configure(text=f"Remaining targets: {self.game._get_score()}")
+        self.score_label.configure(text=f"Remaining targets: {self.game.get_score()}")
         is_spymaster_turn = (self.game.phase == Phase.GIVING_CLUE)
         is_game_over = (self.game.phase == Phase.GAME_OVER)
         human_is_spymaster = (is_spymaster_turn and self.spymaster is None)
