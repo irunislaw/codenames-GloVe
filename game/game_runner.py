@@ -114,7 +114,7 @@ class GameRunner:
                     else:
                         consecutive_errors = 0
                         logger.info(f"Guess: {guess} - {message}")
-                        card_type = next((c.card_type.value for c in self.game.board if c.word == guess), "UNKNOWN")
+                        card_type = next((c.card_type.value for c in self.game.board if c.word.upper() == guess.upper()), "UNKNOWN")
                         if self.eval_logger:
                             self.eval_logger.log_guess(guess, card_type)
         logger.info(f"Game over!")

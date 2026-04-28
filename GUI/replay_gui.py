@@ -1,5 +1,12 @@
 import customtkinter as ctk
 
+from players.glove_spymaster import GloveSpyMaster
+import threading
+import gensim.downloader as api
+
+from utils.load_model import Model
+
+
 class ReplayFrame(ctk.CTkFrame):
     def __init__(self,master, replay_data, **kwargs):
         super().__init__(master, **kwargs)
@@ -18,20 +25,25 @@ class ReplayFrame(ctk.CTkFrame):
                 self.history.append(action)
 
         self.current_step = 0
-
+        self.glove_model = None
         self.COLOR_UNKNOWN = "#3b3b3b"
         self.COLOR_TARGET = "#2ecc71"
         self.COLOR_NEUTRAL = "#d3aa76"
         self.COLOR_ASSASSIN = "#e74c3c"
 
         self.setup_ui()
+        self.start_model_loader()
         self.update_board()
 
     def get_color(self, card_type):
-        if card_type == "TARGET": return self.COLOR_TARGET
-        if card_type == "NEUTRAL": return self.COLOR_NEUTRAL
-        if card_type == "ASSASSIN": return self.COLOR_ASSASSIN
+        card_type_str = str(card_type).split('.')[-1].upper()
+
+        if "TARGET" in card_type_str: return self.COLOR_TARGET
+        if "NEUTRAL" in card_type_str: return self.COLOR_NEUTRAL
+        if "ASSASSIN" in card_type_str: return self.COLOR_ASSASSIN
+        print(f"DEBUG REPLAY: Nieznany typ karty dla get_color: '{card_type}'")
         return self.COLOR_UNKNOWN
+
 
     def setup_ui(self):
         self.grid_columnconfigure(0, weight=3)
@@ -89,12 +101,16 @@ class ReplayFrame(ctk.CTkFrame):
                 clue_text = f"🎯 Clue: {action['clue']} ({action['count']})"
                 color = "#5dade2"
                 words = action.get("words")
-
+                similarities = action.get("similarities")
                 lbl = ctk.CTkLabel(self.timeline_frame, text=clue_text, text_color=color, anchor="w",
-                                   font=ctk.CTkFont(size=14), justify="left")
+                                   font=ctk.CTkFont(size=14), justify="left", wraplength=200)
 
                 if words:
-                    words_str = ", ".join(words) if isinstance(words, (list, tuple)) else str(words)
+                    if similarities and len(similarities) == len(words):
+                        words_with_sim = [f"{w} ({sim:.3f})" for w, sim in zip(words, similarities)]
+                        words_str = ", ".join(words_with_sim)
+                    else:
+                        words_str = ", ".join(words) if isinstance(words, (list, tuple)) else str(words)
                     clue_text_base = clue_text + " ▼"
                     lbl.configure(text=clue_text_base, cursor="hand2")
 
@@ -116,13 +132,26 @@ class ReplayFrame(ctk.CTkFrame):
                     text = "⏭️ Guesser PASSED"
                     color = "white"
                 else:
-                    res = action["result"]
+                    res = action.get("result", "UNKNOWN")
+
+
+                    if "UNKNOWN" in str(res).upper():
+                        clean_guess = word.upper().strip()
+                        for b_word, b_type in self.replay_data["initial_board"]:
+                            if b_word.upper().strip() == clean_guess:
+                                res = str(b_type).split('.')[-1].upper()
+                                break
+
+
                     text = f"❓ Guess: {word} -> {res}"
-                    if res == "TARGET":
+
+
+                    res_upper = str(res).upper()
+                    if "TARGET" in res_upper:
                         color = self.COLOR_TARGET
-                    elif res == "ASSASSIN":
+                    elif "ASSASSIN" in res_upper:
                         color = self.COLOR_ASSASSIN
-                    elif res == "NEUTRAL":
+                    elif "NEUTRAL" in res_upper:
                         color = self.COLOR_NEUTRAL
                     else:
                         color = "white"
@@ -160,9 +189,36 @@ class ReplayFrame(ctk.CTkFrame):
         self.options_frame.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
 
         self.spymaster_view_var = ctk.BooleanVar(value=True)
-        self.spymaster_cb = ctk.CTkCheckBox(self.options_frame, text="Spymaster View (Pokaż kolory)", variable=self.spymaster_view_var, command=self.update_board)
+        self.spymaster_cb = ctk.CTkCheckBox(self.options_frame, text="Spymaster View", variable=self.spymaster_view_var, command=self.update_board)
         self.spymaster_cb.pack(pady=10)
+        self.debug_mode_var = ctk.BooleanVar(value=False)
+        self.debug_cb = ctk.CTkCheckBox(self.options_frame, text="Debug Mode (Pokaż podobieństwo do wszystkich)", variable=self.debug_mode_var, command=self.update_board)
 
+        self.loading_label = ctk.CTkLabel(self.options_frame, text="Ładowanie modelu językowego...", text_color="gray")
+        self.loading_label.pack(pady=10)
+
+    def start_model_loader(self):
+        def load_model():
+            try:
+                if GloveSpyMaster.shared_model:
+                    self.glove_model = GloveSpyMaster.shared_model
+                else:
+                    model_manager = Model()
+                    self.glove_model = model_manager.load_model("glove-wiki-gigaword-100")
+                    GloveSpyMaster.shared_model = self.glove_model
+            except Exception as e:
+                print(f"Failed to load model: {e}")
+            finally:
+                self.after(0, self.on_model_loaded)
+
+        thread = threading.Thread(target=load_model, daemon=True)
+        thread.start()
+
+    def on_model_loaded(self):
+        self.loading_label.pack_forget()
+        self.debug_cb.pack(pady=10)
+        if self.debug_mode_var.get():
+            self.update_board()
     def prev_step(self):
         if self.current_step > 0:
             self.current_step -= 1
@@ -180,19 +236,33 @@ class ReplayFrame(ctk.CTkFrame):
         for i in range(self.current_step):
             action = self.history[i]
             if action["action"] == "GUESS" and action["word"] != "PASS":
-                revealed_words.add(action["word"])
+                revealed_words.add(action["word"].upper())
 
-        for word, card_type in self.replay_data["initial_board"]:
-            btn = self.buttons[word]
-            actual_color = self.get_color(card_type)
+            last_clue = None
+            for i in range(self.current_step):
+                action = self.history[i]
+                if action["action"] == "CLUE":
+                    last_clue = action.get("clue")
 
-            if word in revealed_words:
-                btn.configure(fg_color=actual_color, text=f"{word}\n[X]", text_color="black")
-            else:
-                if self.spymaster_view_var.get():
-                    btn.configure(fg_color=actual_color, text=f"{word}\n", text_color="black")
+            for word, card_type in self.replay_data["initial_board"]:
+                btn = self.buttons[word]
+                actual_color = self.get_color(card_type)
+
+                sim_text = "\n"
+                if self.debug_mode_var.get() and self.glove_model and last_clue:
+                    try:
+                        sim = float(self.glove_model.similarity(last_clue.lower(), word.lower()))
+                        sim_text = f"\n{sim:.3f}"
+                    except Exception:
+                        sim_text = "\nN/A"
+
+                if word.upper() in revealed_words:
+                    btn.configure(fg_color=actual_color, text=f"{word}\n[X]{sim_text}", text_color="black")
                 else:
-                    btn.configure(fg_color=self.COLOR_UNKNOWN, text=f"{word}\n", text_color="white")
+                    if self.spymaster_view_var.get():
+                        btn.configure(fg_color=actual_color, text=f"{word}{sim_text}", text_color="black")
+                    else:
+                        btn.configure(fg_color=self.COLOR_UNKNOWN, text=f"{word}{sim_text}", text_color="white")
 
 
         for i, lbl in enumerate(self.log_labels):

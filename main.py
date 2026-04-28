@@ -17,7 +17,6 @@ from utils.game_logger import GameLogger
 logging.basicConfig(level=logging.INFO, format='%(message)s', stream=sys.stdout)
 #logging.getLogger().setLevel(logging.WARNING) #odkomentowac gdy chcemy wyciszyc konsole
 
-#TODO moze UI fajniejsze zeby w konsoli nie bylo i nie trzeba bylo resetowac programu + moze csv viewer
 def select_agents():
     print("\n--- Select Spymaster ---")
     print("1: Human")
