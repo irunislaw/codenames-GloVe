@@ -56,51 +56,51 @@ class GloveSpyMaster(SpyMaster):
         #tu moze jakos robic wagi według similarity tylko trzeba to wyważyc,
         # chodzi mi o to ze zaczynamy od kombinacji czwórek np.
         # i sprawdzamy similarity i jak jest dos wysokie to mozemy dac to clue, a jak nie to mniej wyrazów jeszcze
-        #TODO Żeby działało gdy zostaną mniej niż 2 słowa do zgadnięcia na planszy
+        #TODO calculate neutral words as negative examples but with lesser weight
         targets = [c.word.lower() for c in obs.board if not c.revealed and c.type == 'TARGET' and c.word.lower() in self.glove]
         assassin = [c.word for c in obs.board if not c.revealed and c.type == 'ASSASSIN' and c.word.lower() in self.glove]
         assassin_word = assassin[0].lower() if assassin else None
-        word_count = 2  # HARDCODED
-        if len(targets) == 1:
-            word_count = 1
-
-
-        # get all combinations of the target words
-        target_combinations = itertools.combinations(targets, word_count)
-
+        
         best_clue = None
         best_score = -float('inf')
         best_selected_targets = None
+        best_word_count = None
+        
+        for word_count in range( 1, len(targets) + 1 ):
 
-        board_words = {c.word.upper() for c in obs.board}
+            # get all combinations of the target words
+            target_combinations = itertools.combinations(targets, word_count)
 
-        for selected_targets in target_combinations:
-            selected_targets_list = list(selected_targets)
-            assassin_list = [(assassin_word, -self.weight_assasin)]
-            try:
+            board_words = {c.word.upper() for c in obs.board}
 
-                similar_words = self.glove.most_similar(
-                    positive=selected_targets_list,
-                    negative=assassin_list,
-                    topn=5,
-                )
-            except Exception:
-                continue
-            for current_clue, current_score in similar_words:
-                if current_clue.upper() in board_words:
-                    print(f"Skipping {current_clue} because it's already revealed")
+            for selected_targets in target_combinations:
+                selected_targets_list = list(selected_targets)
+                assassin_list = [(assassin_word, -self.weight_assasin)]
+                try:
+
+                    similar_words = self.glove.most_similar(
+                        positive=selected_targets_list,
+                        negative=assassin_list,
+                        topn=5,
+                    )
+                except Exception:
                     continue
-                if current_clue.upper() not in board_words:
-                    if current_score > best_score:
-                        best_clue = current_clue
-                        best_score = current_score
-                        best_selected_targets = selected_targets_list
-                    break
+                for current_clue, current_score in similar_words:
+                    # stop iterating over similar_words if they all have worse score then best_score
+                    if current_score < best_score:
+                        break
+                    if current_clue.upper() in board_words:
+                        print(f"Skipping {current_clue} because it's already revealed")
+                        continue
+                    if current_clue.upper() not in board_words:
+                        if current_score > best_score:
+                            best_clue = current_clue
+                            best_score = current_score
+                            best_selected_targets = selected_targets_list
+                            best_word_count = word_count
+                        break
         if best_clue is None:
             return "PASS", 0
-
-
-
 
         if self.logger:
             similarities = []
@@ -118,7 +118,7 @@ class GloveSpyMaster(SpyMaster):
             self.terminal.info(f"clue {best_clue}")
             self.terminal.info(f"score {best_score}")
 
-        return best_clue,word_count
+        return best_clue,best_word_count
 
 def quick_test(name="glove-wiki-gigaword-300"):
     model = api.load(name)
