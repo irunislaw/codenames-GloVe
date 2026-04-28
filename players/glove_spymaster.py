@@ -20,12 +20,13 @@ from utils.load_model import Model
 class GloveSpyMaster(SpyMaster):
     # ONLY 1 TEAM GAMES
 
-    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.5, logger: GameLogger = None):
+    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.5, weight_neutral=0.1, logger: GameLogger = None):
         super().__init__()
         self.terminal = logging.getLogger()
         model_manager = Model()
         self.glove = model_manager.load_model(name = model)
         self.weight_assasin = weight_assasin
+        self.weight_neutral = weight_neutral 
         self.logger = None
         if logger:
             self.logger = logger
@@ -52,14 +53,17 @@ class GloveSpyMaster(SpyMaster):
         return score
 
     def get_clue(self, obs:SpymasterObservation) -> Tuple[str, int]:
-        #TODO Żeby przeszukiwał też inne ilości słów do zgadnięcia niż 2
         #tu moze jakos robic wagi według similarity tylko trzeba to wyważyc,
         # chodzi mi o to ze zaczynamy od kombinacji czwórek np.
         # i sprawdzamy similarity i jak jest dos wysokie to mozemy dac to clue, a jak nie to mniej wyrazów jeszcze
-        #TODO calculate neutral words as negative examples but with lesser weight
-        targets = [c.word.lower() for c in obs.board if not c.revealed and c.type == 'TARGET' and c.word.lower() in self.glove]
-        assassin = [c.word for c in obs.board if not c.revealed and c.type == 'ASSASSIN' and c.word.lower() in self.glove]
+        unrevealed_cards = [c for c in obs.board if not c.revealed and c.word.lower() in self.glove] 
+        targets = [c.word.lower() for c in unrevealed_cards if c.type == 'TARGET']
+        neutrals = [c.word.lower() for c in unrevealed_cards if c.type == 'NEUTRAL']
+        assassin = [c.word.lower() for c in unrevealed_cards if c.type == 'ASSASSIN']
         assassin_word = assassin[0].lower() if assassin else None
+        assassin_list = [(assassin_word, -self.weight_assasin)]
+        neutral_list = [(neutral_word, -self.weight_neutral) for neutral_word in neutrals]
+        board_words = {c.word.upper() for c in obs.board}
         
         best_clue = None
         best_score = -float('inf')
@@ -71,16 +75,13 @@ class GloveSpyMaster(SpyMaster):
             # get all combinations of the target words
             target_combinations = itertools.combinations(targets, word_count)
 
-            board_words = {c.word.upper() for c in obs.board}
-
             for selected_targets in target_combinations:
                 selected_targets_list = list(selected_targets)
-                assassin_list = [(assassin_word, -self.weight_assasin)]
+                negative_list = assassin_list + neutral_list
                 try:
-
                     similar_words = self.glove.most_similar(
                         positive=selected_targets_list,
-                        negative=assassin_list,
+                        negative=negative_list,
                         topn=5,
                     )
                 except Exception:
