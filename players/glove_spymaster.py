@@ -15,21 +15,17 @@ import itertools
 
 from utils.game_logger import GameLogger
 from utils.load_model import Model
-from utils.custom_glove_model import CustomGloveModel
 
 
 class GloveSpyMaster(SpyMaster):
     # ONLY 1 TEAM GAMES
 
-    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.4, weight_neutral=0.1, word_bonus=0.05, logger: GameLogger = None):
+    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.5, logger: GameLogger = None):
         super().__init__()
         self.terminal = logging.getLogger()
         model_manager = Model()
         self.glove = model_manager.load_model(name = model)
-        self.glove.__class__ = CustomGloveModel
         self.weight_assasin = weight_assasin
-        self.weight_neutral = weight_neutral 
-        self.word_bonus = word_bonus # bonus added to the score for selecting more words in (0, 1)
         self.logger = None
         if logger:
             self.logger = logger
@@ -56,57 +52,52 @@ class GloveSpyMaster(SpyMaster):
         return score
 
     def get_clue(self, obs:SpymasterObservation) -> Tuple[str, int]:
+        #TODO Żeby przeszukiwał też inne ilości słów do zgadnięcia niż 2
         #tu moze jakos robic wagi według similarity tylko trzeba to wyważyc,
         # chodzi mi o to ze zaczynamy od kombinacji czwórek np.
         # i sprawdzamy similarity i jak jest dos wysokie to mozemy dac to clue, a jak nie to mniej wyrazów jeszcze
-        unrevealed_cards = [c for c in obs.board if not c.revealed and c.word.lower() in self.glove] 
-        targets = [c.word.lower() for c in unrevealed_cards if c.type == 'TARGET']
-        neutrals = [c.word.lower() for c in unrevealed_cards if c.type == 'NEUTRAL']
-        assassin = [c.word.lower() for c in unrevealed_cards if c.type == 'ASSASSIN']
+        #TODO Żeby działało gdy zostaną mniej niż 2 słowa do zgadnięcia na planszy
+        targets = [c.word.lower() for c in obs.board if not c.revealed and c.type == 'TARGET' and c.word.lower() in self.glove]
+        assassin = [c.word for c in obs.board if not c.revealed and c.type == 'ASSASSIN' and c.word.lower() in self.glove]
         assassin_word = assassin[0].lower() if assassin else None
-        assassin_list = [(assassin_word, -self.weight_assasin)]
-        neutral_list = [(neutral_word, -self.weight_neutral) for neutral_word in neutrals]
-        board_words = {c.word.upper() for c in obs.board}
-        
+        word_count = 2  # HARDCODED
+        if len(targets) == 1:
+            word_count = 1
+
+
+        # get all combinations of the target words
+        target_combinations = itertools.combinations(targets, word_count)
+
         best_clue = None
         best_score = -float('inf')
         best_selected_targets = None
-        best_word_count = None
-        
-        for word_count in range( 1, len(targets) + 1 ):
 
-            # get all combinations of the target words
-            target_combinations = itertools.combinations(targets, word_count)
+        board_words = {c.word.upper() for c in obs.board}
+        all_candidates = []
+        for selected_targets in target_combinations:
+            selected_targets_list = list(selected_targets)
+            assassin_list = [(assassin_word, -self.weight_assasin)]
+            try:
 
-            for selected_targets in target_combinations:
-                selected_targets_list = list(selected_targets)
-                negative_list = assassin_list + neutral_list
-                # get similarites for all words in glvoe
-                try:
-                    similar_words = self.glove.most_similar(
-                        positive=selected_targets_list,
-                        negative=negative_list,
-                        topn=5,
-                    )
-                except Exception:
+                similar_words = self.glove.most_similar(
+                    positive=selected_targets_list,
+                    negative=assassin_list,
+                    topn=15,
+                )
+            except Exception:
+                continue
+            for current_clue, current_score in similar_words:
+                if current_clue.upper() in board_words:
+                    print(f"Skipping {current_clue} because it's already revealed")
                     continue
-                for current_clue, current_score in similar_words:
-                    # give bonus for higher word_count                    
-                    current_score = current_score * (1 - self.word_bonus + word_count / len(targets) * self.word_bonus) 
-                    # stop iterating over similar_words if they all have worse score then best_score
-                    if current_score < best_score:
-                        break
-                    if current_clue.upper() in board_words:
-                        print(f"Skipping {current_clue} because it's already revealed")
-                        continue
-                    if current_clue.upper() not in board_words:
-                        if current_score > best_score:
-                            best_clue = current_clue
-                            best_score = current_score
-                            best_selected_targets = selected_targets_list
-                            best_word_count = word_count
-                        break
-        if best_clue is None:
+                all_candidates.append({
+                    "clue": current_clue,
+                    "score": current_score,
+                    "targets": selected_targets_list,
+                    "count": word_count
+                })
+        if not all_candidates:
+            self.last_top_k = []
             return "PASS", 0
         all_candidates.sort(key=lambda x: x["score"], reverse=True)
 
@@ -150,8 +141,7 @@ def model_info(name="glove-wiki-gigaword-300"):
 
 if __name__=="__main__":
     # test glove embeddings
-    #TODO spymaster nie powininen dawać dwukrotnie tej samej podpowiedzi jeśli poprzednim razem gusser nie trafił
-    #TODO dodać minimalizację wariancji odległości
+    #TODO USUNIECIE ZEBY DAWALO HASLA Z LICZBAMI ALBO -
     logging.basicConfig(level=logging.NOTSET, format='%(message)s', stream=sys.stdout)
     quick_test()
     # WORDS_FILE_PATH = "data/words.txt"
