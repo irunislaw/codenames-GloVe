@@ -33,7 +33,7 @@ class GloveSpyMaster(SpyMaster):
         self.logger = None
         if logger:
             self.logger = logger
-
+        self.last_top_k = []
         # oddzielnie czyta słownik z pliku
         WORDS_FILE_PATH = "data/words.txt"
         try:
@@ -108,6 +108,15 @@ class GloveSpyMaster(SpyMaster):
                         break
         if best_clue is None:
             return "PASS", 0
+        all_candidates.sort(key=lambda x: x["score"], reverse=True)
+
+        best_candidate = all_candidates[0]
+        best_clue = best_candidate["clue"]
+        best_score = best_candidate["score"]
+        best_selected_targets = best_candidate["targets"]
+        best_word_count = best_candidate["count"]
+
+        self.last_top_k = [{"clue": c["clue"], "score": c["score"]} for c in all_candidates[:5]]
 
         if self.logger:
             similarities = []
@@ -128,9 +137,10 @@ class GloveSpyMaster(SpyMaster):
         return best_clue,best_word_count
 
 def quick_test(name="glove-wiki-gigaword-300"):
-    model = api.load(name)
+    model_manager = Model()
+    model = model_manager.load_model(name)
     # Quick test: Find a clue for 'Apple' and 'Washington'
-    print(model.most_similar(positive=['vet'], topn=5))
+    print(model.most_similar(positive=['epstein'], topn=10))
 
 def model_info(name="glove-wiki-gigaword-300"):
     print(list(api.info()['models'].keys()))

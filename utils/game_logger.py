@@ -48,10 +48,18 @@ class GameLogger:
     def set_initial_board(self, board):
         self.initial_board = [(c.word, c.card_type.value) for c in board]
 
-    def log_clue(self, clue: str, count: int):
+    def log_clue(self, clue: str, count: int, latency: float = 0.0, score_left: int = 9, top_k: list = None):
         self.stats["clues_history"].append(clue)
-        event = {"action": "CLUE", "clue": clue, "count": count}
 
+        event = {
+            "action": "CLUE",
+            "clue": clue,
+            "count": count,
+            "latency": latency,
+            "score_left": score_left
+        }
+        if top_k:
+            event["top_k"] = top_k
 
         if hasattr(self, '_pending_words') and self._pending_words is not None:
             event["words"] = self._pending_words
@@ -66,9 +74,15 @@ class GameLogger:
         self._pending_words = words
         self._pending_similarities = similarities
 
-    def log_guess(self, word: str, result_type: str):
+    def log_guess(self, word: str, result_type: str, latency: float = 0.0, score_left: int = 9):
         self.stats["total_guesses_made"] += 1
-        self.binary_history.append({"action": "GUESS", "word": word, "result": result_type})
+        self.binary_history.append({
+            "action": "GUESS",
+            "word": word,
+            "result": result_type,
+            "latency": latency,
+            "score_left": score_left
+        })
 
         if result_type == "NEUTRAL":
             self.stats["neutral_hits"] += 1
@@ -79,7 +93,7 @@ class GameLogger:
     def finalize_game(self, game: Codenames):
         self.stats["is_victory"] = game.is_victory
         self.stats["turns_taken"] = game.turn_taken
-        self.stats["targets_left"] = game._get_score()
+        self.stats["targets_left"] = game.get_score()
 
     def save_stats_to_csv(self, filepath: str):
         os.makedirs(os.path.dirname(filepath),exist_ok=True)

@@ -52,7 +52,7 @@ class Codenames:
         board_obs = [ObservationCard(word=c.word, type=c.card_type.value, revealed=c.is_revealed) for c in self.board]
         return SpymasterObservation(
             board=board_obs,
-            score=self._get_score(),
+            score=self.get_score(),
             turn_taken=self.turn_taken
         )
     def get_observation_for_guesser(self)-> GuesserObservation:
@@ -67,7 +67,7 @@ class Codenames:
             clue= self.current_clue,
             remaining_guesses= self.guesses_allowed - self.guesses_made,
             board= visible_board,
-            score= self._get_score()
+            score= self.get_score()
         )
     def give_clue(self, clue: str, count: int) -> Tuple[bool, str]:
         if self.phase != Phase.GIVING_CLUE:
@@ -132,12 +132,12 @@ class Codenames:
         self.guesses_made = 0
 
     def _check_win_condition(self)-> bool:
-        if self._get_score() ==0:
+        if self.get_score() ==0:
             self.is_victory = True
             self.phase = Phase.GAME_OVER
             return True
         return False
 
-    def _get_score(self)-> int:
+    def get_score(self)-> int:
         return sum(1 for c in self.board if c.card_type == CardType.TARGET and not c.is_revealed)
 
