@@ -155,7 +155,7 @@ class MainMenu(ctk.CTk):
             total_boards = len(boards)
 
             for i, (board_id, board) in enumerate(boards):
-                if board_id == 31:
+                if board_id == 13:
                     print("break")
                 game = Codenames(pregenerated_board=board)
                 spymaster = GloveSpyMaster()

@@ -1,5 +1,6 @@
 import logging
 import sys
+import time
 from typing import Dict, Tuple
 
 from game.observation import SpymasterObservation
@@ -56,6 +57,8 @@ class GloveSpyMaster(SpyMaster):
         return score
 
     def get_clue(self, obs:SpymasterObservation) -> Tuple[str, int]:
+        start_time = time.time()
+        time_limit = 10.0
         #tu moze jakos robic wagi według similarity tylko trzeba to wyważyc,
         # chodzi mi o to ze zaczynamy od kombinacji czwórek np.
         # i sprawdzamy similarity i jak jest dos wysokie to mozemy dac to clue, a jak nie to mniej wyrazów jeszcze
@@ -79,14 +82,29 @@ class GloveSpyMaster(SpyMaster):
             target_combinations = itertools.combinations(targets, word_count)
 
             for selected_targets in target_combinations:
+                if time.time() - start_time > time_limit:
+                    if self.terminal:
+                        self.terminal.info(f"Przekroczono limit czasu ({time_limit}s)! Przerywam szukanie.")
+                    if best_clue is not None:
+                        # Możesz tu dokleić logowanie (logger/terminal), które jest na końcu oryginalnej funkcji
+                        return best_clue, best_word_count
+                    else:
+                        return "COCOA", 2
                 selected_targets_list = list(selected_targets)
+                if word_count >= 3:
+                    pairs = list(itertools.combinations(selected_targets_list, 2))
+                    # sumujemy podobieństwo każdej pary i dzielimy przez liczbę par
+                    avg_sim = sum(self.glove.similarity(w1, w2) for w1, w2 in pairs) / len(pairs)
+
+                    if avg_sim < 0.4:
+                        continue
                 negative_list = assassin_list + neutral_list
                 # get similarites for all words in glvoe
                 try:
                     similar_words = self.glove.most_similar(
                         positive=selected_targets_list,
                         negative=negative_list,
-                        topn=5,
+                        topn=50,
                     )
                 except Exception:
                     continue
@@ -108,15 +126,15 @@ class GloveSpyMaster(SpyMaster):
                         break
         if best_clue is None:
             return "PASS", 0
-        all_candidates.sort(key=lambda x: x["score"], reverse=True)
+     #   all_candidates.sort(key=lambda x: x["score"], reverse=True)
 
-        best_candidate = all_candidates[0]
-        best_clue = best_candidate["clue"]
-        best_score = best_candidate["score"]
-        best_selected_targets = best_candidate["targets"]
-        best_word_count = best_candidate["count"]
+    #    best_candidate = all_candidates[0]
+    #     best_clue = best_candidate["clue"]
+    #     best_score = best_candidate["score"]
+    #     best_selected_targets = best_candidate["targets"]
+    #     best_word_count = best_candidate["count"]
 
-        self.last_top_k = [{"clue": c["clue"], "score": c["score"]} for c in all_candidates[:5]]
+   #     self.last_top_k = [{"clue": c["clue"], "score": c["score"]} for c in all_candidates[:5]]
 
         if self.logger:
             similarities = []

@@ -1,4 +1,5 @@
 import logging
+import time
 from typing import Dict
 # import random
 
@@ -26,6 +27,8 @@ class GloveGuesser(Guesser):
         self.current_list = []
 
     def generate_list(self, possibilities, clue, n):
+        start_time = time.time()
+        time_limit = 10.0
         best_similarity = -float('inf')
         best_combination = None
 
@@ -34,6 +37,10 @@ class GloveGuesser(Guesser):
         combinations = [list(c) for c in itertools.combinations(possibilities, n)]
 
         for comb in combinations:
+            if time.time() - start_time > time_limit:
+                if self.terminal:
+                    self.terminal.info(f"Przekroczono limit czasu ({time_limit}s) w Guesserze! Przerywam szukanie.")
+                break
             comb_vector = self.glove.get_mean_vector(
                 keys=comb,
                 pre_normalize=True,
