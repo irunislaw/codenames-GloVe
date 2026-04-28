@@ -29,7 +29,7 @@ class GloveSpyMaster(SpyMaster):
         self.logger = None
         if logger:
             self.logger = logger
-
+        self.last_top_k = []
         # oddzielnie czyta słownik z pliku
         WORDS_FILE_PATH = "data/words.txt"
         try:
@@ -73,7 +73,7 @@ class GloveSpyMaster(SpyMaster):
         best_selected_targets = None
 
         board_words = {c.word.upper() for c in obs.board}
-
+        all_candidates = []
         for selected_targets in target_combinations:
             selected_targets_list = list(selected_targets)
             assassin_list = [(assassin_word, -self.weight_assasin)]
@@ -82,7 +82,7 @@ class GloveSpyMaster(SpyMaster):
                 similar_words = self.glove.most_similar(
                     positive=selected_targets_list,
                     negative=assassin_list,
-                    topn=5,
+                    topn=15,
                 )
             except Exception:
                 continue
@@ -90,17 +90,24 @@ class GloveSpyMaster(SpyMaster):
                 if current_clue.upper() in board_words:
                     print(f"Skipping {current_clue} because it's already revealed")
                     continue
-                if current_clue.upper() not in board_words:
-                    if current_score > best_score:
-                        best_clue = current_clue
-                        best_score = current_score
-                        best_selected_targets = selected_targets_list
-                    break
-        if best_clue is None:
+                all_candidates.append({
+                    "clue": current_clue,
+                    "score": current_score,
+                    "targets": selected_targets_list,
+                    "count": word_count
+                })
+        if not all_candidates:
+            self.last_top_k = []
             return "PASS", 0
+        all_candidates.sort(key=lambda x: x["score"], reverse=True)
 
+        best_candidate = all_candidates[0]
+        best_clue = best_candidate["clue"]
+        best_score = best_candidate["score"]
+        best_selected_targets = best_candidate["targets"]
+        best_word_count = best_candidate["count"]
 
-
+        self.last_top_k = [{"clue": c["clue"], "score": c["score"]} for c in all_candidates[:5]]
 
         if self.logger:
             similarities = []
@@ -118,12 +125,13 @@ class GloveSpyMaster(SpyMaster):
             self.terminal.info(f"clue {best_clue}")
             self.terminal.info(f"score {best_score}")
 
-        return best_clue,word_count
+        return best_clue,best_word_count
 
 def quick_test(name="glove-wiki-gigaword-300"):
-    model = api.load(name)
+    model_manager = Model()
+    model = model_manager.load_model(name)
     # Quick test: Find a clue for 'Apple' and 'Washington'
-    print(model.most_similar(positive=['vet'], topn=5))
+    print(model.most_similar(positive=['epstein'], topn=10))
 
 def model_info(name="glove-wiki-gigaword-300"):
     print(list(api.info()['models'].keys()))
