@@ -15,18 +15,21 @@ import itertools
 
 from utils.game_logger import GameLogger
 from utils.load_model import Model
+from utils.custom_glove_model import CustomGloveModel
 
 
 class GloveSpyMaster(SpyMaster):
     # ONLY 1 TEAM GAMES
 
-    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.5, weight_neutral=0.1, logger: GameLogger = None):
+    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.4, weight_neutral=0.1, word_bonus=0.05, logger: GameLogger = None):
         super().__init__()
         self.terminal = logging.getLogger()
         model_manager = Model()
         self.glove = model_manager.load_model(name = model)
+        self.glove.__class__ = CustomGloveModel
         self.weight_assasin = weight_assasin
         self.weight_neutral = weight_neutral 
+        self.word_bonus = word_bonus # bonus added to the score for selecting more words in (0, 1)
         self.logger = None
         if logger:
             self.logger = logger
@@ -78,6 +81,7 @@ class GloveSpyMaster(SpyMaster):
             for selected_targets in target_combinations:
                 selected_targets_list = list(selected_targets)
                 negative_list = assassin_list + neutral_list
+                # get similarites for all words in glvoe
                 try:
                     similar_words = self.glove.most_similar(
                         positive=selected_targets_list,
@@ -87,6 +91,8 @@ class GloveSpyMaster(SpyMaster):
                 except Exception:
                     continue
                 for current_clue, current_score in similar_words:
+                    # give bonus for higher word_count                    
+                    current_score = current_score * (1 - self.word_bonus + word_count / len(targets) * self.word_bonus) 
                     # stop iterating over similar_words if they all have worse score then best_score
                     if current_score < best_score:
                         break
@@ -134,7 +140,8 @@ def model_info(name="glove-wiki-gigaword-300"):
 
 if __name__=="__main__":
     # test glove embeddings
-    #TODO USUNIECIE ZEBY DAWALO HASLA Z LICZBAMI ALBO -
+    #TODO spymaster nie powininen dawać dwukrotnie tej samej podpowiedzi jeśli poprzednim razem gusser nie trafił
+    #TODO dodać minimalizację wariancji odległości
     logging.basicConfig(level=logging.NOTSET, format='%(message)s', stream=sys.stdout)
     quick_test()
     # WORDS_FILE_PATH = "data/words.txt"
