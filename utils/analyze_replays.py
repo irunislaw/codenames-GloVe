@@ -183,7 +183,7 @@ class ReplayAnalyzer:
 # Przykładowe użycie na końcu pliku:
 if __name__ == "__main__":
 
-    analyzer = ReplayAnalyzer(replays_folder="../stats/test-for-stats/replays")
+    analyzer = ReplayAnalyzer(replays_folder="../stats/7154/replays")
 
     if len(analyzer.replays_data) > 0:
         analyzer.get_spymaster_stats()

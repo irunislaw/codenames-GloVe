@@ -157,5 +157,5 @@ class AdvancedReplayAnalyzer:
 
 if __name__ == "__main__":
 
-    analyzer = AdvancedReplayAnalyzer("../stats/test/replays")
+    analyzer = AdvancedReplayAnalyzer("../stats/7154/replays")
     analyzer.run_advanced_analytics()
