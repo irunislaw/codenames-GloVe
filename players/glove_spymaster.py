@@ -21,7 +21,7 @@ from utils.custom_glove_model import CustomGloveModel
 class GloveSpyMaster(SpyMaster):
     # ONLY 1 TEAM GAMES
 
-    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.4, weight_neutral=0.1, word_bonus=0.05, logger: GameLogger = None):
+    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.9, weight_neutral=0.7, word_bonus=0.00, logger: GameLogger = None):
         super().__init__()
         self.terminal = logging.getLogger()
         model_manager = Model()
@@ -72,8 +72,10 @@ class GloveSpyMaster(SpyMaster):
         best_score = -float('inf')
         best_selected_targets = None
         best_word_count = None
+
+        all_candidates = []
         
-        for word_count in range( 1, len(targets) + 1 ):
+        for word_count in range(len(targets) + 1, 1, -1):
 
             # get all combinations of the target words
             target_combinations = itertools.combinations(targets, word_count)
@@ -99,13 +101,15 @@ class GloveSpyMaster(SpyMaster):
                     if current_clue.upper() in board_words:
                         print(f"Skipping {current_clue} because it's already revealed")
                         continue
-                    if current_clue.upper() not in board_words:
-                        if current_score > best_score:
-                            best_clue = current_clue
-                            best_score = current_score
-                            best_selected_targets = selected_targets_list
-                            best_word_count = word_count
+                    if current_score > best_score:
+                        best_clue = current_clue
+                        best_score = current_score
+                        best_selected_targets = selected_targets_list
+                        best_word_count = word_count
+                        new_candidate = {"clue": current_clue, "score": current_score, "targets": selected_targets_list, "count": word_count}
+                        all_candidates.append(new_candidate)
                         break
+
         if best_clue is None:
             return "PASS", 0
         all_candidates.sort(key=lambda x: x["score"], reverse=True)
