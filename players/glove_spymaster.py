@@ -60,7 +60,9 @@ class GloveSpyMaster(SpyMaster):
         targets = [c.word.lower() for c in obs.board if not c.revealed and c.type == 'TARGET' and c.word.lower() in self.glove]
         assassin = [c.word for c in obs.board if not c.revealed and c.type == 'ASSASSIN' and c.word.lower() in self.glove]
         assassin_word = assassin[0].lower() if assassin else None
-        word_count = 2  # HARDCODED
+        word_count = 3
+        if len(targets) == 2:
+            word_count = 2
         if len(targets) == 1:
             word_count = 1
 
