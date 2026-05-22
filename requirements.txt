@@ -1,0 +1,7 @@
+customtkinter
+gensim
+pandas
+matplotlib
+seaborn
+tqdm
+PyYAML

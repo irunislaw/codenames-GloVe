@@ -6,6 +6,7 @@ import gensim.downloader as api
 
 from utils.load_model import Model
 
+# TO-DO: initialize the right spymaster from the config
 
 class ReplayFrame(ctk.CTkFrame):
     def __init__(self,master, replay_data, **kwargs):

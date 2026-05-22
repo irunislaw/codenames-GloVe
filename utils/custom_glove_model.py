@@ -29,11 +29,7 @@ class CustomGloveModel(KeyedVectors):
         """Find the top-N most similar keys.
         Positive keys contribute positively towards the similarity, negative keys negatively.
 
-        This method computes cosine similarity between a simple mean of the projection
-        weight vectors of the given keys and the vectors for each key in the model.
-        The method corresponds to the `word-analogy` and `distance` scripts in the original
-        word2vec implementation.
-
+        Only alphanumeric keys are considered for similarity.
         Parameters
         ----------
         positive : list of (str or int or ndarray) or list of ((str,float) or (int,float) or (ndarray,float)), optional

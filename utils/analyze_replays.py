@@ -180,14 +180,25 @@ class ReplayAnalyzer:
         print("Wykresy zostały pomyślnie wygenerowane i zapisane!")
 
 
-# Przykładowe użycie na końcu pliku:
-if __name__ == "__main__":
+def main():
+    import sys
+    import os
 
-    analyzer = ReplayAnalyzer(replays_folder="../stats/7154/replays")
+    test_name = sys.argv[1]
+    if test_name is None:
+        print("Podaj nazwę testu")
+        return
+    replays_path= os.path.join("stats", test_name, "replays")
+    plots_path=os.path.join("plots", test_name)
+    analyzer = ReplayAnalyzer(replays_folder=replays_path)
 
     if len(analyzer.replays_data) > 0:
         analyzer.get_spymaster_stats()
         analyzer.get_guesser_stats()
-        analyzer.generate_charts(save_dir="plots")
+        analyzer.generate_charts(save_dir=plots_path)
     else:
         print("Nie można wykonać analizy. Uruchom najpierw grę, aby wygenerować pliki .pkl.gz")
+
+# Przykładowe użycie na końcu pliku:
+if __name__ == "__main__":
+    main()

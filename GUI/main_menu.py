@@ -14,6 +14,8 @@ from players.glove_spymaster import GloveSpyMaster
 from utils.dataset_manager import DatasetManager
 from utils.game_logger import GameLogger
 
+from config import settings, save_config
+
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 class MainMenu(ctk.CTk):
@@ -139,8 +141,10 @@ class MainMenu(ctk.CTk):
         os.makedirs(run_dir, exist_ok=True)
 
         csv_path = os.path.join(run_dir, "batch_evaluation.csv")
+        config_path = os.path.join(run_dir, "config.yaml")
         replays_dir = os.path.join(run_dir, "replays")
         os.makedirs(replays_dir, exist_ok=True)
+        save_config(config_path)
 
         log_file_path = os.path.join(run_dir, "errors_and_warnings.log")
         file_handler = logging.FileHandler(log_file_path, encoding="utf-8", mode="w")
@@ -158,7 +162,14 @@ class MainMenu(ctk.CTk):
                 if board_id == 13:
                     print("break")
                 game = Codenames(pregenerated_board=board)
-                spymaster = GloveSpyMaster()
+                spymaster = GloveSpyMaster(
+                    weight_assassin=settings["glove_spymaster"]["weight_assassin"],
+                    weight_neutral=settings["glove_spymaster"]["weight_neutral"],
+                    word_bonus=settings["glove_spymaster"]["word_bonus"],
+                    number_targets=settings["glove_spymaster"]["number_targets"],
+                    clue_validation=settings["glove_spymaster"]["clue_validation"],
+                    time_limit=settings["glove_spymaster"]["time_limit"]
+                    )
                 guesser = GloveGuesser()
 
                 eval_logger = GameLogger(spymaster.__class__.__name__, guesser.__class__.__name__,
@@ -310,7 +321,15 @@ class MainMenu(ctk.CTk):
         sm_name =  "SpyMaster"
         g_name = "Guesser"
         eval_logger = GameLogger(sm_name, g_name, board_id=board_id)
-        spymaster = GloveSpyMaster(logger=eval_logger) if sm_type == "Glove Bot" else None
+        spymaster = GloveSpyMaster(
+                    weight_assassin=settings["glove_spymaster"]["weight_assassin"],
+                    weight_neutral=settings["glove_spymaster"]["weight_neutral"],
+                    word_bonus=settings["glove_spymaster"]["word_bonus"],
+                    number_targets=settings["glove_spymaster"]["number_targets"],
+                    clue_validation=settings["glove_spymaster"]["clue_validation"],
+                    time_limit=settings["glove_spymaster"]["time_limit"],
+                    logger=eval_logger
+                ) if sm_type == "Glove Bot" else None
         guesser = GloveGuesser() if g_type == "Glove Bot" else None
 
 

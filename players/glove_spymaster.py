@@ -22,43 +22,81 @@ from utils.custom_glove_model import CustomGloveModel
 class GloveSpyMaster(SpyMaster):
     # ONLY 1 TEAM GAMES
 
-    def __init__(self, words_pool_path="data/words.txt", model="glove-wiki-gigaword-100", weight_assasin=0.4, weight_neutral=0.1, word_bonus=0.05, logger: GameLogger = None):
+    def __init__(
+                    self,
+                    words_pool_path="data/words.txt",
+                    model="glove-wiki-gigaword-100",
+                    weight_assassin=0.4, 
+                    weight_neutral=0.1, 
+                    word_bonus=0.05,
+                    number_targets = None,  
+                    clue_validation=True,
+                    time_limit=10.0,
+                    logger: GameLogger = None
+                ):
+        """Initializes the AI agent with a specific word vector model and game weights.
+
+        Args:
+            words_pool_path (str): Path to the text file containing the pool of valid words. 
+                Defaults to "data/words.txt".
+            model (str): Name of the pre-trained GloVe model to load via the Model manager. 
+                Defaults to "glove-wiki-gigaword-100".
+            weight_assassin (float): Negative weight penalty applied to the assassin word score. 
+                Defaults to 0.4.
+            weight_neutral (float): Negative weight penalty applied to neutral words scores. 
+                Defaults to 0.1.
+            word_bonus (float): Score bonus multiplier in the range (0, 1) awarded for 
+                successfully connecting/selecting multiple words. Defaults to 0.05.
+            number_targets (int): The number of targets spymaster selects for the clue.
+                If None, every number of targets is checked and most optimal is selected.
+            time_limit (float): The time in seconds after which spymaster stops searching.
+            clue_validation (bool): If True, clues are validated for being alphanumeric. 
+                Defaults to True.
+            logger (GameLogger, optional): Custom logger instance to track game events and decisions. 
+                Defaults to None.
+
+        Raises:
+            SystemExit: If the file at `words_pool_path` (or the hardcoded fallback path) 
+                cannot be found.
+        """
         super().__init__()
         self.terminal = logging.getLogger()
         model_manager = Model()
         self.glove = model_manager.load_model(name = model)
-        self.glove.__class__ = CustomGloveModel
-        self.weight_assasin = weight_assasin
+        if clue_validation:
+            self.glove.__class__ = CustomGloveModel
+        self.weight_assassin = weight_assassin
         self.weight_neutral = weight_neutral 
         self.word_bonus = word_bonus # bonus added to the score for selecting more words in (0, 1)
+        self.clue_validation = clue_validation
+        self.number_targets = number_targets
+        self.time_limit=time_limit
         self.logger = None
         if logger:
             self.logger = logger
         self.last_top_k = []
         # oddzielnie czyta słownik z pliku
-        WORDS_FILE_PATH = "data/words.txt"
         try:
-            with open(WORDS_FILE_PATH, 'r', encoding='utf-8') as f:
+            with open(words_pool_path, 'r', encoding='utf-8') as f:
                 words_pool = [line.strip().upper() for line in f if line.strip()]
         except FileNotFoundError:
-            self.terminal.error(f"Error: Couldnt find {WORDS_FILE_PATH}.")
-            exit()             
+            self.terminal.error(f"Error: Couldnt find {words_pool_path}.")
         self.words_pool = words_pool
 
-    def calculate_score(self, clue_vec, targets_vecs, assasin_vec):
+    def calculate_score(self, clue_vec, targets_vecs, assassin_vec):
         target_sims = self.glove.cosine_similarities(clue_vec, targets_vecs)
 
         score = np.sum(target_sims)
 
-        if assasin_vec is not None:
+        if assassin_vec is not None:
             # dot product gives cosine similarity
-            assasin_sim = np.dot(clue_vec, assasin_vec)
-            score -= assasin_sim
+            assassin_sim = np.dot(clue_vec, assassin_vec)
+            score -= assassin_sim
         return score
 
     def get_clue(self, obs:SpymasterObservation) -> Tuple[str, int]:
         start_time = time.time()
-        time_limit = 10.0
+        time_limit = self.time_limit
         #tu moze jakos robic wagi według similarity tylko trzeba to wyważyc,
         # chodzi mi o to ze zaczynamy od kombinacji czwórek np.
         # i sprawdzamy similarity i jak jest dos wysokie to mozemy dac to clue, a jak nie to mniej wyrazów jeszcze
@@ -67,7 +105,7 @@ class GloveSpyMaster(SpyMaster):
         neutrals = [c.word.lower() for c in unrevealed_cards if c.type == 'NEUTRAL']
         assassin = [c.word.lower() for c in unrevealed_cards if c.type == 'ASSASSIN']
         assassin_word = assassin[0].lower() if assassin else None
-        assassin_list = [(assassin_word, -self.weight_assasin)]
+        assassin_list = [(assassin_word, -self.weight_assassin)]
         neutral_list = [(neutral_word, -self.weight_neutral) for neutral_word in neutrals]
         board_words = {c.word.upper() for c in obs.board}
         
@@ -75,12 +113,61 @@ class GloveSpyMaster(SpyMaster):
         best_score = -float('inf')
         best_selected_targets = None
         best_word_count = None
+        targets_left = len(targets)
         
-        for word_count in range( 1, len(targets) + 1 ):
+        if self.number_targets is None:
+            # check every possible number of targets
+            for word_count in range( 1, len(targets) + 1 ):
 
-            # get all combinations of the target words
+                # get all combinations of the target words
+                target_combinations = itertools.combinations(targets, word_count)
+
+                for selected_targets in target_combinations:
+                    if time.time() - start_time > time_limit:
+                        if self.terminal:
+                            self.terminal.info(f"Przekroczono limit czasu ({time_limit}s)! Przerywam szukanie.")
+                        if best_clue is not None:
+                            # Możesz tu dokleić logowanie (logger/terminal), które jest na końcu oryginalnej funkcji
+                            return best_clue, best_word_count
+                        else:
+                            return "COCOA", 2
+                    selected_targets_list = list(selected_targets)
+                    if word_count >= 3:
+                        pairs = list(itertools.combinations(selected_targets_list, 2))
+                        # sumujemy podobieństwo każdej pary i dzielimy przez liczbę par
+                        avg_sim = sum(self.glove.similarity(w1, w2) for w1, w2 in pairs) / len(pairs)
+
+                        if avg_sim < 0.4:
+                            continue
+                    negative_list = assassin_list + neutral_list
+                    # get similarites for all words in glvoe
+                    try:
+                        similar_words = self.glove.most_similar(
+                            positive=selected_targets_list,
+                            negative=negative_list,
+                            topn=50,
+                        )
+                    except Exception:
+                        continue
+                    for current_clue, current_score in similar_words:
+                        if current_clue.upper() in board_words:
+                            print(f"Skipping {current_clue} because it's already revealed")
+                            continue
+                        # give bonus for higher word_count                    
+                        current_score = current_score * (1 - self.word_bonus + word_count / len(targets) * self.word_bonus) 
+                        # stop iterating over similar_words if they all have worse score then best_score
+                        if current_score < best_score:
+                            break
+                        if current_score > best_score:
+                            best_clue = current_clue
+                            best_score = current_score
+                            best_selected_targets = selected_targets_list
+                            best_word_count = word_count
+                            break
+        else:
+            # fixed selected number of targets, clamped to the number of targets left
+            word_count = min(self.number_targets, targets_left)
             target_combinations = itertools.combinations(targets, word_count)
-
             for selected_targets in target_combinations:
                 if time.time() - start_time > time_limit:
                     if self.terminal:
@@ -91,38 +178,27 @@ class GloveSpyMaster(SpyMaster):
                     else:
                         return "COCOA", 2
                 selected_targets_list = list(selected_targets)
-                if word_count >= 3:
-                    pairs = list(itertools.combinations(selected_targets_list, 2))
-                    # sumujemy podobieństwo każdej pary i dzielimy przez liczbę par
-                    avg_sim = sum(self.glove.similarity(w1, w2) for w1, w2 in pairs) / len(pairs)
-
-                    if avg_sim < 0.4:
-                        continue
                 negative_list = assassin_list + neutral_list
-                # get similarites for all words in glvoe
                 try:
                     similar_words = self.glove.most_similar(
                         positive=selected_targets_list,
                         negative=negative_list,
-                        topn=50,
+                        topn=10,
                     )
                 except Exception:
                     continue
                 for current_clue, current_score in similar_words:
-                    # give bonus for higher word_count                    
-                    current_score = current_score * (1 - self.word_bonus + word_count / len(targets) * self.word_bonus) 
-                    # stop iterating over similar_words if they all have worse score then best_score
-                    if current_score < best_score:
-                        break
+                    # clues are sorted, so it's enough to check if the clue is on the board
                     if current_clue.upper() in board_words:
                         print(f"Skipping {current_clue} because it's already revealed")
                         continue
-                    if current_clue.upper() not in board_words:
-                        if current_score > best_score:
-                            best_clue = current_clue
-                            best_score = current_score
-                            best_selected_targets = selected_targets_list
-                            best_word_count = word_count
+                    if current_score < best_score:
+                        break
+                    if current_score > best_score:
+                        best_clue = current_clue
+                        best_score = current_score
+                        best_selected_targets = selected_targets_list
+                        best_word_count = word_count
                         break
         if best_clue is None:
             return "PASS", 0
