@@ -3,6 +3,10 @@ import os
 from tkinter import messagebox
 import customtkinter as ctk
 from game.codenames import Codenames, Phase
+
+from config import settings
+from utils.table_recorder import table_recorder
+
 class CodenamesGui(ctk.CTk):
     def __init__(self, game: Codenames, spymaster=None, guesser=None, game_logger=None):
         super().__init__()
@@ -161,6 +165,8 @@ class CodenamesGui(ctk.CTk):
 
     def check_game_over(self):
         if self.game.phase == Phase.GAME_OVER:
+            if settings["game"]["record_table"]:
+                table_recorder.record_end_turn()
             if self.game_logger:
                 self.game_logger.finalize_game(self.game)
                 single_csv = os.path.join("stats", "single_games", "single_games.csv")
@@ -185,6 +191,8 @@ class CodenamesGui(ctk.CTk):
         if success:
             self.consecutive_errors = 0
             self.logger.info(f"Bot Spymaster gave clue: ({clue}, {count})")
+            if settings["game"]["record_table"]:
+                table_recorder.record_obs(obs, count)
             if self.game_logger:
                 self.game_logger.log_clue(clue, count)
         else:

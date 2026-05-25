@@ -183,7 +183,7 @@ class GloveSpyMaster(SpyMaster):
                     similar_words = self.glove.most_similar(
                         positive=selected_targets_list,
                         negative=negative_list,
-                        topn=10,
+                        topn=50,
                     )
                 except Exception:
                     continue

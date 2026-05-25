@@ -161,7 +161,7 @@ if __name__ == "__main__":
 
     test_name = sys.argv[1] if len(sys.argv) > 1 else None
     if test_name is None:
-        print("Podaj nazwę testu jako argument (np. 'complete_test')")
+        print("Podaj nazwę testu jako argument (np. 'test1')")
         exit(1)
     analyzer = AdvancedReplayAnalyzer(os.path.join("stats", test_name, "replays"))
     analyzer.run_advanced_analytics()

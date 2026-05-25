@@ -6,6 +6,9 @@ import copy
 
 from game.observation import SpymasterObservation, ObservationCard, GuesserObservation
 
+from config import settings
+from utils.table_recorder import table_recorder
+
 
 class CardType(Enum):
     TARGET = "TARGET"
@@ -112,6 +115,8 @@ class Codenames:
             self._end_turn()
             return True, "Miss(neutral), end of turn"
         else:
+            if settings["game"]["record_table"]:
+                table_recorder.record_guess(target_hit=True)
             if self._check_win_condition():
                 return True, "Hit! Game over, you won!"
             if self.guesses_made >= self.guesses_allowed:
@@ -130,6 +135,9 @@ class Codenames:
         self.current_clue = None
         self.guesses_allowed = 0
         self.guesses_made = 0
+
+        if settings["game"]["record_table"]:
+            table_recorder.record_end_turn()
 
     def _check_win_condition(self)-> bool:
         if self.get_score() ==0:
