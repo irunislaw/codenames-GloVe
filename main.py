@@ -11,6 +11,7 @@ from players.glove_guesser import GloveGuesser
 from players.glove_spymaster import GloveSpyMaster
 from players.human_guesser import HumanGuesser
 from players.human_spymaster import HumanSpyMaster
+from players.prepare_spymaster import prepare_spymaster
 from utils.dataset_manager import DatasetManager
 from utils.game_logger import GameLogger
 
@@ -27,14 +28,7 @@ def select_agents():
     if sm_choice == '1':
         spymaster = HumanSpyMaster()
     else:
-        spymaster = GloveSpyMaster(
-                        weight_assassin=settings["glove_spymaster"]["weight_assassin"],
-                        weight_neutral=settings["glove_spymaster"]["weight_neutral"],
-                        word_bonus=settings["glove_spymaster"]["word_bonus"],
-                        number_targets=settings["glove_spymaster"]["number_targets"],
-                        clue_validation=settings["glove_spymaster"]["clue_validation"],
-                        time_limit=settings["glove_spymaster"]["time_limit"]
-                    )
+        spymaster = prepare_spymaster()
     print("\n--- Select Guesser ---")
     print("1: Human")
     print("2: Glove Bot")
@@ -134,14 +128,7 @@ if __name__ == "__main__":
 
         for board_id, board in tqdm(boards, desc="Evaluating boards", unit="board"):
             game = Codenames(pregenerated_board=board)
-            spymaster = GloveSpyMaster(
-                        weight_assassin=settings["glove_spymaster"]["weight_assassin"],
-                        weight_neutral=settings["glove_spymaster"]["weight_neutral"],
-                        word_bonus=settings["glove_spymaster"]["word_bonus"],
-                        number_targets=settings["glove_spymaster"]["number_targets"],
-                        clue_validation=settings["glove_spymaster"]["clue_validation"],
-                        time_limit=settings["glove_spymaster"]["time_limit"]
-                    )
+            spymaster = prepare_spymaster()
             guesser = GloveGuesser()
 
             eval_logger = GameLogger(spymaster.__class__.__name__, guesser.__class__.__name__, board_id=board_id)

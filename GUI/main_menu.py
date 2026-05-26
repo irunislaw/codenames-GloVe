@@ -11,6 +11,7 @@ from game.codenames import Codenames
 from game.game_runner import GameRunner
 from players.glove_guesser import GloveGuesser
 from players.glove_spymaster import GloveSpyMaster
+from players.prepare_spymaster import prepare_spymaster
 from utils.dataset_manager import DatasetManager
 from utils.game_logger import GameLogger
 
@@ -162,14 +163,7 @@ class MainMenu(ctk.CTk):
                 if board_id == 13:
                     print("break")
                 game = Codenames(pregenerated_board=board)
-                spymaster = GloveSpyMaster(
-                    weight_assassin=settings["glove_spymaster"]["weight_assassin"],
-                    weight_neutral=settings["glove_spymaster"]["weight_neutral"],
-                    word_bonus=settings["glove_spymaster"]["word_bonus"],
-                    number_targets=settings["glove_spymaster"]["number_targets"],
-                    clue_validation=settings["glove_spymaster"]["clue_validation"],
-                    time_limit=settings["glove_spymaster"]["time_limit"]
-                    )
+                spymaster = prepare_spymaster()
                 guesser = GloveGuesser()
 
                 eval_logger = GameLogger(spymaster.__class__.__name__, guesser.__class__.__name__,
@@ -321,15 +315,7 @@ class MainMenu(ctk.CTk):
         sm_name =  "SpyMaster"
         g_name = "Guesser"
         eval_logger = GameLogger(sm_name, g_name, board_id=board_id)
-        spymaster = GloveSpyMaster(
-                    weight_assassin=settings["glove_spymaster"]["weight_assassin"],
-                    weight_neutral=settings["glove_spymaster"]["weight_neutral"],
-                    word_bonus=settings["glove_spymaster"]["word_bonus"],
-                    number_targets=settings["glove_spymaster"]["number_targets"],
-                    clue_validation=settings["glove_spymaster"]["clue_validation"],
-                    time_limit=settings["glove_spymaster"]["time_limit"],
-                    logger=eval_logger
-                ) if sm_type == "Glove Bot" else None
+        spymaster = prepare_spymaster() if sm_type == "Glove Bot" else None
         guesser = GloveGuesser() if g_type == "Glove Bot" else None
 
 

@@ -137,6 +137,19 @@ class TableRecorder():
             
         print("="*105 + "\n")
 
+    def calculate_expected_guessed_words(self, targets_left_query):
+        matrix2d = self.table[:,:,targets_left_query]
+        total_turns = np.sum(matrix2d, axis=1)
+        # np.arange(10) creates the multipliers [0, 1, 2...9] for the guessed_words dimension
+        weighted_guesses = np.sum(matrix2d * np.arange(self.table.shape[1]), axis=1)
+
+        expected_guesses = np.divide(weighted_guesses, total_turns, out=np.zeros_like(weighted_guesses, dtype=float), where=total_turns!=0)
+        return expected_guesses
+
+    def get_best_target_count(self, targets_left_query):
+        expected_guesses = self.calculate_expected_guessed_words(targets_left_query)
+        return np.argmax(expected_guesses).item()
+
 table_recorder = TableRecorder()
 if settings["game"]["record_table"]:
     table_recorder.load_table()
@@ -144,3 +157,4 @@ if settings["game"]["record_table"]:
 if __name__=="__main__":
     table_recorder.load_table()
     table_recorder.print_statistics()
+    print(table_recorder.get_best_target_count(5))

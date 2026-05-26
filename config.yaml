@@ -1,9 +1,10 @@
 glove_spymaster:
+  type: normal # set to history for the bot that uses historic knowledge to select clues
   weight_assassin: 1.0
   weight_neutral: 0.1
   word_bonus: 0.05
-  number_targets: null # set to null for the bot to check every combination
+  number_targets: 2 # set to null for the bot to check every combination
   clue_validation: true
   time_limit: 10.0
 game:
-  record_table: true
+  record_table: false

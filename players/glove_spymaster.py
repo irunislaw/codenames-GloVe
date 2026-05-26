@@ -109,8 +109,8 @@ class GloveSpyMaster(SpyMaster):
         
         if self.number_targets is not None:
             # check only fixed number of targets
-            word_count_list = list(self.number_targets)
-            best_clue, best_word_count, best_score, best_seleted_targets = self._find_best_clue(
+            word_count_list = [self.number_targets]
+            best_clue, best_word_count, best_score, best_selected_targets = self._find_best_clue(
                 word_count_list,
                 targets,
                 assassin_list,

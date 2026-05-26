@@ -18,7 +18,7 @@ class ReplayAnalyzer:
         """Wczytuje wszystkie pliki powtórek z podanego folderu."""
         search_pattern = os.path.join(self.replays_folder, "*.pkl.gz")
         files = glob.glob(search_pattern)
-        print(f"Znaleziono {len(files)} plików powtórek.")
+        print(f"Znaleziono {len(files)} plików powtórek w {self.replays_folder}.")
 
         for file in files:
             try:
@@ -107,6 +107,12 @@ class ReplayAnalyzer:
             "assassin_hits": assassin_hits,
             "invalid_guesses": invalid_guesses
         }
+    
+    def get_game_stats(self):
+        games_total = len(self.replays_data)
+        games_won = 0    
+        for game in self.replays_data:
+            pass
 
 
     def generate_charts(self, save_dir="plots"):
