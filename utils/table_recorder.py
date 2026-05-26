@@ -12,6 +12,7 @@ class State(Enum):
     GIVING_CLUE="GIVING_CLUE"
     GUESSING="GUESSING"
 
+# To jest klasa do zapisywania sobie ile targetów daje ile zgadnięć
 class TableRecorder():
     def __init__(self, table_path="data/table.npy", save_freq=5):
         self.table = np.zeros(shape=(10, 10, 10))
