@@ -27,7 +27,7 @@ class HistoryGloveSpyMaster(GloveSpyMaster):
         targets_left = len(targets)
 
         number_targets = table_recorder.get_best_target_count(targets_left)     
-        print(f"[HISTORY_SPYMASTER] clue_targets: {number_targets}, targets_left: {targets_left}")   
+        # print(f"[HISTORY_SPYMASTER] clue_targets: {number_targets}, targets_left: {targets_left}")   
         # check only fixed number of targets
         word_count_list = [number_targets]
         best_clue, best_word_count, best_score, best_selected_targets = self._find_best_clue(

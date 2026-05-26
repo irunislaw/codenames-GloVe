@@ -106,17 +106,21 @@ class GloveSpyMaster(SpyMaster):
         assassin_list = [(assassin_word, -self.weight_assassin)]
         neutral_list = [(neutral_word, -self.weight_neutral) for neutral_word in neutrals]
         board_words = {c.word.upper() for c in obs.board}
+        targets_left = len(targets)
         
         if self.number_targets is not None:
             # check only fixed number of targets
-            word_count_list = [self.number_targets]
+            number_targets = self.number_targets if targets_left > self.number_targets else targets_left
+            word_count_list = [number_targets]
             best_clue, best_word_count, best_score, best_selected_targets = self._find_best_clue(
                 word_count_list,
                 targets,
                 assassin_list,
                 neutral_list, 
                 board_words, 
-                time_limit
+                time_limit,
+                use_time_limit=True,
+                use_score_treshold=False
             )
         else:
             # check every number of targets possible
@@ -152,9 +156,10 @@ class GloveSpyMaster(SpyMaster):
             word_counts_to_test,
             targets, assassin_list,
             neutral_list, board_words,
-            time_limit
+            time_limit,
+            use_time_limit = False,
+            use_score_treshold = False
         ):
-        start_time = time.time()
         best_clue = None
         best_score = -float('inf')
         best_selected_targets = None
@@ -163,13 +168,15 @@ class GloveSpyMaster(SpyMaster):
         #tu moze jakos robic wagi według similarity tylko trzeba to wyważyc,
         # chodzi mi o to ze zaczynamy od kombinacji czwórek np.
         # i sprawdzamy similarity i jak jest dos wysokie to mozemy dac to clue, a jak nie to mniej wyrazów jeszcze
-        for word_count in range( 1, len(targets) + 1 ):
+        start_time = time.time()
+
+        for word_count in word_counts_to_test:
 
             # get all combinations of the target words
             target_combinations = itertools.combinations(targets, word_count)
 
             for selected_targets in target_combinations:
-                if time.time() - start_time > time_limit:
+                if use_time_limit and time.time() - start_time > time_limit:
                     if self.terminal:
                         self.terminal.info(f"Przekroczono limit czasu ({time_limit}s)! Przerywam szukanie.")
                     if best_clue is not None:
@@ -178,7 +185,7 @@ class GloveSpyMaster(SpyMaster):
                     else:
                         return "COCOA", 2
                 selected_targets_list = list(selected_targets)
-                if word_count >= 3:
+                if use_score_treshold and word_count >= 3:
                     pairs = list(itertools.combinations(selected_targets_list, 2))
                     # sumujemy podobieństwo każdej pary i dzielimy przez liczbę par
                     avg_sim = sum(self.glove.similarity(w1, w2) for w1, w2 in pairs) / len(pairs)

@@ -6,7 +6,6 @@ from players.history_glove_spymaster import HistoryGloveSpyMaster
 def prepare_spymaster(logger=None):
     spymaster = None
     type = settings["glove_spymaster"]["type"]
-    print(type)
 
     if type == "history":
         # print("[SPYMASTER]: creating history spymaster")
@@ -32,3 +31,5 @@ def prepare_spymaster(logger=None):
                     logger=logger
                 ) 
     return spymaster
+
+print(f"[PREP_SPYMASTER] config type: {settings["glove_spymaster"]["type"]}")

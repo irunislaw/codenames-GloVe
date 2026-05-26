@@ -9,9 +9,12 @@ from collections import Counter
 
 
 class ReplayAnalyzer:
-    def __init__(self, replays_folder: str):
-        self.replays_folder = replays_folder
+    def __init__(self, test_name: str):
         self.replays_data = []
+        replays_path= os.path.join("stats", test_name, "replays")
+        csv_path = os.path.join("stats", test_name, "batch_evaluation.csv")
+        self.replays_folder = replays_path
+        self.csv_folder = csv_path
         self._load_all_replays()
 
     def _load_all_replays(self):
@@ -109,10 +112,16 @@ class ReplayAnalyzer:
         }
     
     def get_game_stats(self):
-        games_total = len(self.replays_data)
-        games_won = 0    
-        for game in self.replays_data:
-            pass
+        print("\n--- [A] Statystyki Gry ---")
+
+        df = pd.read_csv(self.csv_folder)
+        won_games = df['is_victory'].sum()
+        total_turns = df['turns_taken'].sum()
+        games_total = len(df)
+        winrate = won_games / games_total
+        avg_turns = total_turns / games_total
+        print(f"Procent gier wygranych: {winrate * 100}%")
+        print(f"Średnia ilość tur: { avg_turns}")
 
 
     def generate_charts(self, save_dir="plots"):
@@ -191,14 +200,14 @@ def main():
     import os
 
     test_name = sys.argv[1]
-    if test_name is None:
+    if len(sys.argv) < 2:
         print("Podaj nazwę testu")
         return
-    replays_path= os.path.join("stats", test_name, "replays")
     plots_path=os.path.join("plots", test_name)
-    analyzer = ReplayAnalyzer(replays_folder=replays_path)
+    analyzer = ReplayAnalyzer(test_name)
 
     if len(analyzer.replays_data) > 0:
+        analyzer.get_game_stats()
         analyzer.get_spymaster_stats()
         analyzer.get_guesser_stats()
         analyzer.generate_charts(save_dir=plots_path)
