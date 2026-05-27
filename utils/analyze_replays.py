@@ -6,6 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from collections import Counter
+import shutil
 
 
 class ReplayAnalyzer:
@@ -199,11 +200,13 @@ def main():
     import sys
     import os
 
-    test_name = sys.argv[1]
     if len(sys.argv) < 2:
         print("Podaj nazwę testu")
         return
+    test_name = sys.argv[1]
     plots_path=os.path.join("plots", test_name)
+    config_source = os.path.join("stats", test_name, "config.yaml")
+    config_destination = os.path.join(plots_path, "config.yaml")
     analyzer = ReplayAnalyzer(test_name)
 
     if len(analyzer.replays_data) > 0:
@@ -211,6 +214,11 @@ def main():
         analyzer.get_spymaster_stats()
         analyzer.get_guesser_stats()
         analyzer.generate_charts(save_dir=plots_path)
+        if os.path.exists(config_source):
+            shutil.copy(config_source, config_destination)
+            print(f"Skopiowano plik konfiguracyjny do: {config_destination}")
+        else:
+            print(f"Ostrzeżenie: Nie znaleziono pliku config.yaml w {config_source}")
     else:
         print("Nie można wykonać analizy. Uruchom najpierw grę, aby wygenerować pliki .pkl.gz")
 

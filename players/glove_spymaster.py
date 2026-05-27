@@ -61,6 +61,7 @@ class GloveSpyMaster(SpyMaster):
         """
         super().__init__()
         self.terminal = logging.getLogger()
+        logging.basicConfig(level=logging.INFO)
         model_manager = Model()
         self.glove = model_manager.load_model(name = model)
         if clue_validation:
@@ -118,9 +119,7 @@ class GloveSpyMaster(SpyMaster):
                 assassin_list,
                 neutral_list, 
                 board_words, 
-                time_limit,
-                use_time_limit=True,
-                use_score_treshold=False
+                time_limit
             )
         else:
             # check every number of targets possible
@@ -131,7 +130,9 @@ class GloveSpyMaster(SpyMaster):
                 assassin_list,
                 neutral_list, 
                 board_words, 
-                time_limit
+                time_limit,
+                use_time_limit=True,
+                use_score_treshold=False
             )
         if self.logger:
             similarities = []
@@ -181,9 +182,9 @@ class GloveSpyMaster(SpyMaster):
                         self.terminal.info(f"Przekroczono limit czasu ({time_limit}s)! Przerywam szukanie.")
                     if best_clue is not None:
                         # Możesz tu dokleić logowanie (logger/terminal), które jest na końcu oryginalnej funkcji
-                        return best_clue, best_word_count
+                        return best_clue, best_word_count, best_score, best_selected_targets
                     else:
-                        return "COCOA", 2
+                        return "COCOA", 2, None, None, None
                 selected_targets_list = list(selected_targets)
                 if use_score_treshold and word_count >= 3:
                     pairs = list(itertools.combinations(selected_targets_list, 2))
@@ -195,11 +196,15 @@ class GloveSpyMaster(SpyMaster):
                 negative_list = assassin_list + neutral_list
                 # get similarites for all words in glvoe
                 try:
-                    similar_words = self.glove.most_similar(
-                        positive=selected_targets_list,
-                        negative=negative_list,
-                        topn=50,
-                    )
+                    similar_words = []
+                    topn=50
+                    while not similar_words:
+                        similar_words = self.glove.most_similar(
+                            positive=selected_targets_list,
+                            negative=negative_list,
+                            topn=topn,
+                        )
+                        topn = topn**2
                 except Exception:
                     continue
                 for current_clue, current_score in similar_words:
@@ -217,6 +222,8 @@ class GloveSpyMaster(SpyMaster):
                         best_selected_targets = selected_targets_list
                         best_word_count = word_count
                         break
+        if best_clue is None:
+            raise Exception("No clue found")
         return best_clue, best_word_count, best_score, best_selected_targets
 def quick_test(name="glove-wiki-gigaword-300"):
     model_manager = Model()

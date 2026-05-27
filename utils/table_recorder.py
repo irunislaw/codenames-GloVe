@@ -48,7 +48,7 @@ class TableRecorder():
         targets = [c.word.lower() for c in unrevealed_cards if c.type == 'TARGET']
         targets_left = len(targets)
         if PRINT_LOGS:
-            print("[Table Recorder]: recorded [clue_targets:", clue_targets, "targets_left:", targets_left, "]")
+            print(f"[Table Recorder]: recorded [clue_targets: {clue_targets}, targets_left:, {targets_left}]")
         self.guessed_words=0
         self.state = State.GUESSING
         self.clue_targets = clue_targets 

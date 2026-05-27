@@ -185,6 +185,7 @@ class MainMenu(ctk.CTk):
         except Exception as e:
             status_message = f"Error during evaluation: {e}"
             status_title = "Error"
+            raise e
         finally:
             logging.getLogger().setLevel(logging.INFO)
 
