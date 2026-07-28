@@ -163,7 +163,8 @@ You can adjust these values to change how the AI behaves during play and evaluat
 
 ## 8. Authors
 
-- Project maintainer: irunislaw
-- Contributors: see the repository history and pull requests for additional contributions
+- [@michaelgrab](https://github.com/michaelgrab)
+- [@irunislaw](https://github.com/irunislaw)
+- [@MichalKazm](https://github.com/MichalKazm)
 
 If you want to contribute, feel free to open an issue or submit a pull request.
