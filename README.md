@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [About The Project](#1-project-title-and-pitch)
+- [About The Project](#1-about--the--project)
 - [Overview / Features](#2-overview--features)
 - [Prerequisites & Requirements](#3-prerequisites--requirements)
 - [Getting Started / Installation](#4-getting-started--installation)
@@ -12,16 +12,38 @@
 
 ## 1. About The Project
 
-Codenames GloVe is a Python-based implementation of the party game Codenames with AI-driven agents powered by GloVe word embeddings. The project lets you play the game interactively, compare human and bot play, run batch evaluations over many boards, and analyze replays and statistics.
+Modern Natural Language Processing (NLP) models have achieved proficiency in sentence analysis and text generation. However, their ability to understand ambiguous semantic relationships between words remains a challenge. Our research project focuses on this area—our goal is to test and evaluate the ability of artificial intelligence to navigate conceptual spaces.
 
-It is a strong fit for experimenting with word-association strategies, testing different spymaster/guesser behaviors, and exploring how semantic similarity can improve clue generation.
+The main research problem is the difference in how humans and machines understand meanings. Natural communication relies on so-called common ground—a subconscious set of shared experiences and intuition. When humans seek associations, they can model the interlocutor's state of mind in order to reach mutual understanding.
+
+Artificial intelligence, operating on static language representations, lacks real-world experience. Machine understanding of concepts relies on a mathematical approximation of calculating the probability of given words appearing next to each other in large knowledge repositories, such as Wikipedia articles. The clash between these two ways of interpreting meaning often leads to cognitive dissonance, which forms part of our analysis.
+
+To study these phenomena in a repeatable manner, the scope of our project also included creating dedicated testing software for AI model evaluation. We designed and implemented an automated analytical environment equipped with a data collection system. The software we built allows running thousands of simulations, logging the history of decisions made by the model (along with their mathematical rationale), and gathering data for subsequent analysis.
+
+### Research Environment
+
+#### Classic Gameplay
+In its original form, *Codenames* is a complex party game based on competition between two teams. Its most important mechanism is asymmetrical communication: in each team, one person acts as the Spymaster, who sees the hidden board layout and tries to guide their Guessers to the correct words among the 25 cards on the table.
+
+On their turn, the Spymaster may give only a single word as a clue and a number specifying how many words on the board connect with that clue. Furthermore, this clue cannot be any of the words currently visible on the table.
+
+#### Our Environment Deconstruction
+For the purposes of this project, we decided to deconstruct the original game rules. The board in our implementation consists of a grid of 25 unique words, which we divided into three classes:
+- **TARGET**: 9 cards that the algorithm must identify.
+- **NEUTRAL**: 15 cards whose selection ends the turn, delaying victory.
+- **ASSASSIN**: 1 card whose selection results in an immediate defeat.
+
+The algorithm's goal in our environment is to identify all 9 targets in the minimum number of turns while avoiding selecting the Assassin.
+
+#### Why Did We Remove Competition?
+The key change was removing the second opposing team. This allowed us to test artificial intelligence strictly in terms of navigating through semantic space. By eliminating the opposing team, we remove the need to analyze the opponent's moves to gain an advantage.
 
 
 ## 2. Overview / Features
 
 This repository includes:
 
-- A playable Codenames game engine with red/blue team logic and board generation
+- A playable Codenames game engine with spymaster/guesser logic and board generation
 - Human and AI-controlled spymasters and guessers
 - A GloVe-based bot that uses semantic similarity to choose clues and guesses
 - A graphical user interface for playing and replaying games
@@ -34,7 +56,7 @@ The project is organized around a modular architecture with separate components 
 - game logic in the `game/` package
 - player strategies in `players/`
 - GUI components in `GUI/`
-- analysis and evaluation utilities in `utils/`
+- scripts for analysis and evaluation in `scripts/`
 - datasets and stats in `data/` and `stats/`
 
 ## 3. Prerequisites & Requirements
@@ -120,6 +142,11 @@ The batch evaluation flow is built into `main.py`. You can run many games agains
 
 ### Replay statistics and plots
 
+Extract which target words the model attempted to link with a clue:
+```bash
+python scripts/extract_clues.py <batch-directory-name>
+```
+
 Generate replay statistics:
 
 ```bash
@@ -134,7 +161,7 @@ python scripts/advanced_analytics.py <batch-directory-name>
 
 Replace `<batch-directory-name>` with a directory inside `stats/`, such as `normal` or `target1`.
 
-## 7. Configuration
+## 6. Configuration
 
 The project uses a YAML configuration file at `config.yaml`.
 
@@ -155,13 +182,14 @@ game:
 
 Key settings include:
 
-- `glove_spymaster.type`: selects the spymaster behavior
+- `glove_spymaster.type`: selects the spymaster behavior (There are 2 types avaiable: historic - the bot uses historic knowledge to select clues and normal - which uses no extra information)
+- `glove_spymaster.number_targets`: the number of targets the bot will target when selecting the clue, when set to 0 the bot will check every possible combination and select the one with the highest score
 - `glove_spymaster.*`: tuning parameters for clue selection and scoring
 - `game.record_table`: controls whether board table data is recorded
 
 You can adjust these values to change how the AI behaves during play and evaluation.
 
-## 8. Authors
+## 7. Authors
 
 - [@michaelgrab](https://github.com/michaelgrab)
 - [@irunislaw](https://github.com/irunislaw)

@@ -193,9 +193,9 @@ class ReplayFrame(ctk.CTkFrame):
         self.spymaster_cb = ctk.CTkCheckBox(self.options_frame, text="Spymaster View", variable=self.spymaster_view_var, command=self.update_board)
         self.spymaster_cb.pack(pady=10)
         self.debug_mode_var = ctk.BooleanVar(value=False)
-        self.debug_cb = ctk.CTkCheckBox(self.options_frame, text="Debug Mode (Pokaż podobieństwo do wszystkich)", variable=self.debug_mode_var, command=self.update_board)
+        self.debug_cb = ctk.CTkCheckBox(self.options_frame, text="Debug Mode (Show similarity to all)", variable=self.debug_mode_var, command=self.update_board)
 
-        self.loading_label = ctk.CTkLabel(self.options_frame, text="Ładowanie modelu językowego...", text_color="gray")
+        self.loading_label = ctk.CTkLabel(self.options_frame, text="Loading language model...", text_color="gray")
         self.loading_label.pack(pady=10)
 
     def start_model_loader(self):

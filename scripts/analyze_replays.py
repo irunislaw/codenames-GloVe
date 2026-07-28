@@ -19,10 +19,10 @@ class ReplayAnalyzer:
         self._load_all_replays()
 
     def _load_all_replays(self):
-        """Wczytuje wszystkie pliki powtórek z podanego folderu."""
+        """Loads all replay files from the given folder."""
         search_pattern = os.path.join(self.replays_folder, "*.pkl.gz")
         files = glob.glob(search_pattern)
-        print(f"Znaleziono {len(files)} plików powtórek w {self.replays_folder}.")
+        print(f"Found {len(files)} replay files in {self.replays_folder}.")
 
         for file in files:
             try:
@@ -30,7 +30,7 @@ class ReplayAnalyzer:
                     data = pickle.load(f)
                     self.replays_data.append(data)
             except Exception as e:
-                print(f"Błąd podczas wczytywania {file}: {e}")
+                print(f"Error while loading {file}: {e}")
 
 
     def get_spymaster_stats(self):
@@ -55,11 +55,11 @@ class ReplayAnalyzer:
         avg_count = total_clue_count_sum / total_clues if total_clues > 0 else 0
         avg_sim = sum(similarities_list) / len(similarities_list) if similarities_list else 0
 
-        print(f"Liczba poprawnych podpowiedzi: {total_clues}")
-        print(f"Średnia liczba słów na podpowiedź (agresywność): {avg_count:.2f}")
-        print(f"Liczba błędnych podpowiedzi (INVALID_CLUE): {invalid_clues}")
+        print(f"Number of valid clues: {total_clues}")
+        print(f"Average number of words per clue (aggressiveness): {avg_count:.2f}")
+        print(f"Invalid clue count (INVALID_CLUE): {invalid_clues}")
         if similarities_list:
-            print(f"Średnie podobieństwo (Cosine Similarity) podpowiedzi: {avg_sim:.4f}")
+            print(f"Average clue similarity (Cosine Similarity): {avg_sim:.4f}")
 
         return {
             "avg_count": avg_count,
@@ -97,12 +97,12 @@ class ReplayAnalyzer:
 
         precision = (correct_guesses / total_guesses * 100) if total_guesses > 0 else 0
 
-        print(f"Całkowita liczba prób strzałów (bez PASS): {total_guesses}")
-        print(f"Skuteczność (Trafienia w TARGET): {precision:.2f}%")
-        print(f"Ilość pasów (PASS): {passes}")
-        print(f"Trafienia w karty NEUTRALNE: {neutral_hits}")
-        print(f"Trafienia w ZABÓJCĘ: {assassin_hits}")
-        print(f"Nielegalne strzały (INVALID_GUESS): {invalid_guesses}")
+        print(f"Total guess attempts (excluding PASS): {total_guesses}")
+        print(f"Accuracy (Hits on TARGET): {precision:.2f}%")
+        print(f"Number of passes (PASS): {passes}")
+        print(f"Hits on NEUTRAL cards: {neutral_hits}")
+        print(f"Hits on ASSASSIN: {assassin_hits}")
+        print(f"Illegal guesses (INVALID_GUESS): {invalid_guesses}")
 
         return {
             "precision": precision,
@@ -113,7 +113,7 @@ class ReplayAnalyzer:
         }
     
     def get_game_stats(self):
-        print("\n--- [A] Statystyki Gry ---")
+        print("\n--- [A] Game Statistics ---")
 
         df = pd.read_csv(self.csv_folder)
         won_games = df['is_victory'].sum()
@@ -121,13 +121,13 @@ class ReplayAnalyzer:
         games_total = len(df)
         winrate = won_games / games_total
         avg_turns = total_turns / games_total
-        print(f"Procent gier wygranych: {winrate * 100}%")
-        print(f"Średnia ilość tur: { avg_turns}")
+        print(f"Win percentage: {winrate * 100}%")
+        print(f"Average number of turns: {avg_turns}")
 
 
     def generate_charts(self, save_dir="plots"):
         os.makedirs(save_dir, exist_ok=True)
-        print(f"\n--- [D] Generowanie wykresów do folderu: {save_dir} ---")
+        print(f"\n--- [D] Generating charts for folder: {save_dir} ---")
 
         game_lengths = []
         mistakes = {"NEUTRAL": 0, "ASSASSIN": 0, "INVALID": 0}
@@ -163,10 +163,10 @@ class ReplayAnalyzer:
         if game_lengths:
             plt.figure(figsize=(8, 5))
             sns.histplot(game_lengths, bins=range(1, max(game_lengths) + 2), discrete=True, color='skyblue')
-            plt.title("Rozkład Długości Gier (Liczba Tur)")
-            plt.xlabel("Liczba Tur")
-            plt.ylabel("Liczba Gier")
-            plt.savefig(os.path.join(save_dir, "histogram_dlugosci_gier.png"))
+            plt.title("Game Length Distribution (Number of Turns)")
+            plt.xlabel("Number of Turns")
+            plt.ylabel("Number of Games")
+            plt.savefig(os.path.join(save_dir, "game_length_histogram.png"))
             plt.close()
 
         if sum(mistakes.values()) > 0:
@@ -175,25 +175,25 @@ class ReplayAnalyzer:
             sizes = list(mistakes.values())
             colors = ['#d3d3d3', '#ff6666', '#ffcc99']
             plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=colors)
-            plt.title("Udział typów błędów w pomyłkach Guessera")
-            plt.savefig(os.path.join(save_dir, "kolowy_pomyki.png"))
+            plt.title("Error Type Share in Guesser Mistakes")
+            plt.savefig(os.path.join(save_dir, "error_types_pie.png"))
             plt.close()
 
         if hits_per_turn:
-            df_turns = pd.DataFrame(hits_per_turn, columns=["Tura", "Trafienia"])
-            avg_hits = df_turns.groupby("Tura")["Trafienia"].mean().reset_index()
+            df_turns = pd.DataFrame(hits_per_turn, columns=["Turn", "Hits"])
+            avg_hits = df_turns.groupby("Turn")["Hits"].mean().reset_index()
 
             plt.figure(figsize=(8, 5))
-            sns.lineplot(data=avg_hits, x="Tura", y="Trafienia", marker="o", color="green")
-            plt.title("Średnia liczba trafionych celów w danej turze")
-            plt.xlabel("Numer Tury")
-            plt.ylabel("Średnia liczba trafień")
-            plt.xticks(avg_hits["Tura"])
+            sns.lineplot(data=avg_hits, x="Turn", y="Hits", marker="o", color='green')
+            plt.title("Average Number of Hits per Turn")
+            plt.xlabel("Turn Number")
+            plt.ylabel("Average Hits")
+            plt.xticks(avg_hits["Turn"])
             plt.grid(True, linestyle="--", alpha=0.6)
-            plt.savefig(os.path.join(save_dir, "liniowy_skutecznosc_tura.png"))
+            plt.savefig(os.path.join(save_dir, "linear_effectiveness_per_turn.png"))
             plt.close()
 
-        print("Wykresy zostały pomyślnie wygenerowane i zapisane!")
+        print("Charts were successfully generated and saved!")
 
 
 def main():
@@ -201,7 +201,7 @@ def main():
     import os
 
     if len(sys.argv) < 2:
-        print("Podaj nazwę testu")
+        print("Enter the test name")
         return
     test_name = sys.argv[1]
     plots_path=os.path.join("plots", test_name)
@@ -216,12 +216,12 @@ def main():
         analyzer.generate_charts(save_dir=plots_path)
         if os.path.exists(config_source):
             shutil.copy(config_source, config_destination)
-            print(f"Skopiowano plik konfiguracyjny do: {config_destination}")
+            print(f"Copied configuration file to: {config_destination}")
         else:
-            print(f"Ostrzeżenie: Nie znaleziono pliku config.yaml w {config_source}")
+            print(f"Warning: config.yaml not found in {config_source}")
     else:
-        print("Nie można wykonać analizy. Uruchom najpierw grę, aby wygenerować pliki .pkl.gz")
+        print("Cannot perform analysis. Run the game first to generate .pkl.gz files")
 
-# Przykładowe użycie na końcu pliku:
+# Example usage at the end of the file:
 if __name__ == "__main__":
     main()
