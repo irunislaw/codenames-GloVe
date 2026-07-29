@@ -16,11 +16,10 @@ class GloveGuesser(Guesser):
     def __init__(self, model="glove-wiki-gigaword-100"):
         super().__init__()
         self.terminal = logging.getLogger()
-        # TODO Podmienic inicjalizacje modelu na ta bardziej optymalna
-        self.terminal.error("loading guesser glove model")
+        self.terminal.info("loading guesser glove model")
         model_manager = Model()
         GloveGuesser.shared_model = model_manager.load_model(name = model)
-        self.terminal.error("loading guesser finished")
+        self.terminal.info("loading guesser finished")
 
         self.glove = GloveGuesser.shared_model
         self.last_guess = None

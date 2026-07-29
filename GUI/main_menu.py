@@ -1,7 +1,7 @@
 import logging
 import os
 import threading
-from tkinter import messagebox
+from tkinter import TclError, messagebox
 
 import customtkinter as ctk
 import random
@@ -209,6 +209,7 @@ class MainMenu(ctk.CTk):
             self.after(0, update_ui)
 
     def open_batch_results_dialog(self):
+        # check if directories exist and exit early if not
         stats_dir = "stats"
         if not os.path.exists(stats_dir):
             messagebox.showinfo("Info", "No stats folder found.")
@@ -220,11 +221,18 @@ class MainMenu(ctk.CTk):
             messagebox.showinfo("Info", "No batch evaluation runs found.")
             return
 
+        # create and configure the dialog window
         dialog = ctk.CTkToplevel(self)
         dialog.title("Select Evaluation")
         dialog.geometry("400x200")
         dialog.transient(self)
-        dialog.grab_set()
+
+        # make sure the window exists before setting focus on it
+        dialog.update_idletasks()
+        try:
+            dialog.grab_set()
+        except TclError:
+            dialog.after(50, lambda: dialog.grab_set())
 
         lbl = ctk.CTkLabel(dialog, text="Select or type test name:", font=ctk.CTkFont(size=14, weight="bold"))
         lbl.pack(pady=(20, 10))
