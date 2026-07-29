@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [About The Project](#1-about--the--project)
+- [About The Project](#1-about-the-project)
 - [Overview / Features](#2-overview--features)
 - [Prerequisites & Requirements](#3-prerequisites--requirements)
 - [Getting Started / Installation](#4-getting-started--installation)
@@ -126,9 +126,16 @@ This opens the main menu which offers the following functionality:
 
 #### Play a single game in GUI
 
+<img width="800" height="405" alt="output_play" src="https://github.com/user-attachments/assets/c2dcea82-f9ba-429a-9dc6-a99ad41fc862" />
+
 #### Running a batch evaluation
 
+<img width="800" height="405" alt="output_run_batch" src="https://github.com/user-attachments/assets/23b27a7d-47be-4d50-b99a-819d3c1e3a4b" />
+
 #### Watching a replay
+
+<img width="800" height="405" alt="output_replay" src="https://github.com/user-attachments/assets/28b6b31c-d77b-4b69-8577-f3590f0df430" />
+
 
 ### Play from the terminal
 
