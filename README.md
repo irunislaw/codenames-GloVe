@@ -117,7 +117,18 @@ pip install -r requirements.txt
 python gui_main.py
 ```
 
-This opens the main menu and lets you start games, inspect replays, and interact with the interface.
+This opens the main menu which offers the following functionality:
+
+- generating a dataset of boards
+- playing a single game
+- running batch evaluation over many boards
+- viewing saved replays
+
+#### Play a single game in GUI
+
+#### Running a batch evaluation
+
+#### Watching a replay
 
 ### Play from the terminal
 
@@ -132,11 +143,11 @@ The terminal app offers a menu with options for:
 - running batch evaluation over many boards
 - viewing saved replays
 
-### Generate a board dataset
+#### Generate a board dataset
 
 From the main menu in `main.py`, choose the dataset generation option to create a board set under `data/`.
 
-### Run batch evaluation
+#### Run batch evaluation
 
 The batch evaluation flow is built into `main.py`. You can run many games against the prepared agents and save results to `stats/`.
 
@@ -182,9 +193,15 @@ game:
 
 Key settings include:
 
-- `glove_spymaster.type`: selects the spymaster behavior (There are 2 types avaiable: historic - the bot uses historic knowledge to select clues and normal - which uses no extra information)
-- `glove_spymaster.number_targets`: the number of targets the bot will target when selecting the clue, when set to 0 the bot will check every possible combination and select the one with the highest score
-- `glove_spymaster.*`: tuning parameters for clue selection and scoring
+`glove_spymaster` tuning parameters for clue selection and scoring
+
+- `type`: selects the spymaster behavior (There are 2 types avaiable: historic - the bot uses `historic` knowledge to select clues and `normal` - which uses no extra information)
+(default: `normal`)
+- `number_targets`: the number of targets the bot will target when selecting the clue, when set to `0` the bot will check every possible combination and select the one with the highest score (default: `0`)
+- `time limit`: if `number_targets` is set to 0 the agent will run a timer and stop early returning the best clue found so far (default: `10.0`)
+
+ `game` controls settings of the game runner
+
 - `game.record_table`: controls whether board table data is recorded
 
 You can adjust these values to change how the AI behaves during play and evaluation.
