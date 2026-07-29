@@ -101,7 +101,7 @@ class BatchResultsGui(ctk.CTk):
         self.right_frame.grid_rowconfigure(0, weight=1)
         self.right_frame.grid_columnconfigure(0, weight=1)
 
-        self.lbl_empty = ctk.CTkLabel(self.right_frame, text="⬅ Kliknij dwukrotnie w tabelę,\naby załadować powtórkę.",
+        self.lbl_empty = ctk.CTkLabel(self.right_frame, text="⬅ Double-click a row to load replay.",
                                       font=ctk.CTkFont(size=18))
         self.lbl_empty.grid(row=0, column=0)
 
@@ -141,7 +141,7 @@ class BatchResultsGui(ctk.CTk):
         if os.path.exists(replay_path):
             self.load_replay(replay_path)
         else:
-            messagebox.showwarning("Błąd", "Nie znaleziono pliku powtórki.")
+            messagebox.showwarning("Error", "Replay file not found.")
 
     def load_replay(self, replay_path):
         try:
@@ -154,7 +154,7 @@ class BatchResultsGui(ctk.CTk):
             self.current_replay_frame = ReplayFrame(self.right_frame, data)
             self.current_replay_frame.pack(fill="both", expand=True, padx=5, pady=5)
         except Exception as e:
-            messagebox.showerror("Error", f"Nie udało się załadować: {e}")
+            messagebox.showerror("Error", f"Failed to load: {e}")
 
     def return_to_menu(self):
         from GUI.main_menu import MainMenu

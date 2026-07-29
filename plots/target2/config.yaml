@@ -1,0 +1,10 @@
+glove_spymaster:
+  type: normal
+  weight_assassin: 1.0
+  weight_neutral: 0.1
+  word_bonus: 0.05
+  number_targets: 2
+  clue_validation: true
+  time_limit: 10.0
+game:
+  record_table: false

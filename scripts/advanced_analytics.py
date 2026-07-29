@@ -16,7 +16,7 @@ class AdvancedReplayAnalyzer:
         for file in files:
             with gzip.open(file, "rb") as f:
                 self.replays_data.append(pickle.load(f))
-        print(f"Załadowano {len(self.replays_data)} powtórek do zaawansowanej analizy.")
+        print(f"Loaded {len(self.replays_data)} replays for advanced analysis.")
 
     def run_advanced_analytics(self):
 
@@ -126,36 +126,42 @@ class AdvancedReplayAnalyzer:
 
         total_intent_guesses = aligned + misaligned
         misalignment_rate = (misaligned / total_intent_guesses * 100) if total_intent_guesses > 0 else 0
-        print("\n--- 1. METRYKI ZROZUMIENIA ---")
-        print(f"Wskaźnik Niezrozumienia (Misalignment Rate): {misalignment_rate:.1f}%")
-        print(f"Zmarnowany potencjał podpowiedzi (Wasted Clues): {wasted} słów")
-        print(f"Użycie reguły N+1 (Bonus Guesses): {bonus} razy")
+        print("\n--- 1. UNDERSTANDING METRICS ---")
+        print(f"Misalignment Rate: {misalignment_rate:.1f}%")
+        print(f"Wasted clue potential (Wasted Clues): {wasted} words")
+        print(f"Bonus Guesses used: {bonus} times")
 
 
-        print("\n--- 2. BOGACTWO JĘZYKOWE ---")
-        print(f"Różnorodność słownika (Unikalne podpowiedzi): {len(vocab)} słów")
+        print("\n--- 2. LEXICAL RICHNESS ---")
+        print(f"Vocabulary diversity (Unique clues): {len(vocab)} words")
 
 
         recovery_rate = (recovered / early_mistake * 100) if early_mistake > 0 else 0
-        print("\n--- 3. DYNAMIKA GRY (MOMENTUM) ---")
+        print("\n--- 3. GAME MOMENTUM ---")
         print(
-            f"Wskaźnik 'odrabiania strat' po szybkim błędzie: {recovery_rate:.1f}% ({recovered}/{early_mistake} gier)")
+            f"Recovery rate after an early mistake: {recovery_rate:.1f}% ({recovered}/{early_mistake} games)")
 
 
         avg_s = sum(s_times) / len(s_times) if s_times else 0
         avg_g = sum(g_times) / len(g_times) if g_times else 0
-        print("\n--- 4. ŚREDNI CZAS PROCESOWANIA (LATENCY) ---")
-        print(f"Spymaster: {avg_s:.2f} s / tura")
-        print(f"Guesser:   {avg_g:.2f} s / tura")
+        print("\n--- 4. AVERAGE PROCESSING TIME (LATENCY) ---")
+        print(f"Spymaster: {avg_s:.2f} s / turn")
+        print(f"Guesser:   {avg_g:.2f} s / turn")
 
 
-        print("\n--- 5. BLACKLISTA (Najbardziej zdradliwe słowa) ---")
+        print("\n--- 5. BLACKLIST (Most deceptive words) ---")
         for word, count in blacklist.most_common(5):
-            print(f"  - '{word}': spudłowano {count} razy")
+            print(f"  - '{word}': missed {count} times")
         print("=" * 50 + "\n")
 
 
 if __name__ == "__main__":
+    import sys 
+    import os
 
-    analyzer = AdvancedReplayAnalyzer("../stats/7154/replays")
+    test_name = sys.argv[1] if len(sys.argv) > 1 else None
+    if test_name is None:
+        print("Provide the test name as an argument (e.g. 'test1')")
+        exit(1)
+    analyzer = AdvancedReplayAnalyzer(os.path.join("stats", test_name, "replays"))
     analyzer.run_advanced_analytics()

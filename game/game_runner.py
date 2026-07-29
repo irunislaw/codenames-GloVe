@@ -8,6 +8,9 @@ from players.interfaces.guesser import Guesser
 from players.interfaces.spymaster import SpyMaster
 from utils.game_logger import GameLogger
 
+from config import settings
+from utils.table_recorder import table_recorder
+
 logger = logging.getLogger("GameRunner")
 
 class GameRunner:
@@ -89,6 +92,8 @@ class GameRunner:
                 if success:
                     consecutive_errors = 0
                     logger.info(f"Spymaster gave clue: ({clue} ,{count})")
+                    if settings["game"]["record_table"]:
+                        table_recorder.record_obs(obs, count)
                     if self.eval_logger:
                         top_k = getattr(self.spymaster, "top_k", None)
                         self.eval_logger.log_clue(clue, count, latency, self.game.get_score(), top_k)

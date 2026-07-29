@@ -29,11 +29,11 @@ class Model:
 
         fast_model_path = os.path.join(folder_dir, f"{name}_fast.gensim")
         if os.path.exists(fast_model_path):
-            logger.info("Znaleziono zoptymalizowany plik .gensim. Błyskawiczne ładowanie (mmap)...")
+            logger.info("Found optimized .gensim file. Fast loading (mmap)...")
             start_time = time.time()
             Model.shared_model = KeyedVectors.load(fast_model_path, mmap='r')
             load_time = time.time() - start_time
-            print(f"Czas ładowania modelu {name} zoptymalizowany do {load_time:.2f}s")
+            print(f"Optimized model {name} loaded in {load_time:.2f}s")
             return Model.shared_model
 
         if not os.path.exists(folder_dir):
